@@ -1,0 +1,178 @@
+/* background {
+  background-color: red;
+}
+
+button {
+  background-image: none;
+  background-color: red;
+}
+
+button:hover {
+
+}
+
+button:active {
+} */
+
+
+
+.window{
+  background-image: url("../images/empty.png");
+}
+
+.icon{
+  padding: 30px;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: 5em;
+}
+
+.h1{
+  margin-top: 0;
+  color: white;
+  font-size: 10em;
+  opacity: 1;
+}
+
+.h2{
+  font-family: 'Nimbus Sans L', sans-serif;
+  color: #e6e6e6;
+  font-size: 5.0em;
+}
+
+.h3{
+  font-family: 'Nimbus Sans L', sans-serif;
+  color: #e6e6e6;
+  font-size: 3em;
+}
+
+.h4{
+  font-family: 'Nimbus Sans L', sans-serif;
+  color: #e6e6e6;
+  font-size: 2em;
+}
+
+.h5{
+  font-family: 'Nimbus Sans L', sans-serif;
+  color: #e6e6e6;
+  font-size: 1.25em;
+}
+
+.h6{
+  font-family: 'Nimbus Sans L', sans-serif;
+  color: #e6e6e6;
+  font-size: 1em;
+}
+
+.co2_back{
+  background-image: url("../images/co2.png");
+}
+
+.temp_back{
+  background-image: url("../images/thermometer.png");
+}
+
+.humid_back{
+  background-image: url("../images/kilogram.png");
+}
+
+.user_back{
+  background-image: url("../images/user.png");
+  background-size: 8em;
+}
+
+.clear_back{
+  background-image: url("../images/clear.png");
+  background-size: 8em;
+}
+
+.backspace_back{
+  background-image: url("../images/backspace.png");
+  background-size: 8em;
+}
+
+.spacebar_back{
+  background-image: url("../images/spacebar.png");
+  background-size: 8em;
+}
+
+.shift_back{
+  background-image: url("../images/shift.png");
+  background-size: 8em;
+}
+
+.enter_back{
+  background-image: url("../images/enter.png");
+  background-size: 8em;
+}
+
+.exit_back{
+  background-image: url("../images/exit.png");
+  background-size: 8em;
+}
+
+.settings_back{
+  background-image: url("../images/settings.png");
+  background-size: 8em;
+}
+
+.b_back{
+  background-image: image(#29465c);
+  border-radius: 15px;
+  border: solid transparent 4px;
+  opacity: 0.7;
+}
+
+.trend_back{
+  background-image: image(#1e4348);
+  border-radius: 2px;
+  border: solid #032328 2px;
+  opacity: 0.7;
+}
+
+.r_back{
+  border-image: none;
+  background-image: image(red);
+  border-radius: 15px;
+  border: solid transparent 4px;
+
+  /* border-radius: 15px; */
+  /* border: solid transparent 4px; */
+  opacity: 0.7;
+}
+
+.red_back{
+  background-image: image(red);
+  border-radius: 15px;
+  border: solid transparent 4px;
+  opacity: 0.7;
+}
+
+.g_back{
+  background-image: image(#26683e);
+  border-radius: 15px;
+  border: solid transparent 4px;
+  opacity: 0.7;
+}
+
+.w_back{
+  background-image: image(#404040);
+  border-radius: 15px;
+  border: solid transparent 4px;
+  opacity: 0.7;
+}
+
+.bk_back{
+  background-image: image(#434343);
+  border-radius: 15px;
+  border: solid transparent 4px;
+  opacity: 0.7;
+}
+
+.co2_back{
+  background-image: url("../images/co2.png");
+}
+
+.static_label {
+  color: #e6e6e6;
+}
