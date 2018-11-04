@@ -23,8 +23,14 @@ def process_hide(*args):
 
 process(['clear'])
 
-subprocess.call(['cd', '..', '&&', 'cd', '..'])
-subprocess.call(['sudo', 'chown', '-R', 'pi', '/'])
+#sudo passwd
+#root
+#root
+#su
+#root
+#cd ..
+#cd ..
+
 subprocess.call(['mkdir', 'kk_hacks'])
 
 subprocess.call(['echo' ,'     Running macro to prepare for install of system.'])
