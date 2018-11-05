@@ -43,11 +43,11 @@ class Window(Gtk.Window, GObject.GObject):
         # Get the GTKWindow ID from the glade file and show window.
         window = builder.get_object(window_name)
 
-        # Show the window.
+        # Show the window.make
         window.show_all()
 
         # Add a Label Update using the built in GObject Thread.
-        GObject.timeout_add(1000, self.label_refresh)
+        GObject.timeout_add(100, self.label_refresh)
 
     def label_refresh(self):
         DataBase.refresh_tag_database()
