@@ -93,6 +93,7 @@ subprocess.call(['echo', '     Disable Overscan (Remove Display Border)...'])
 subprocess.call(['raspi-config', 'nonint', 'do_overscan', '1'])
 subprocess.call(['echo', '     Manually set Resolution to CEA mode 16 1920x1080 60hz 16:9'])
 subprocess.call(['echo', '     Manually set taskbar > panel settings > disable reserver space.'])
+subprocess.call(['echo', '     Add Ubunutu ttf to operating system.  www.youtube.com/watch?v=QH6VuPF7VuY'])
 #subprocess.call(['raspi-config', 'nonint', 'do_serial', '0'])
 subprocess.call(['echo', '\n'])
 

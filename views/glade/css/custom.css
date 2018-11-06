@@ -18,6 +18,7 @@ button:active {
 
 .window{
   background-image: url("../images/empty.png");
+  font-family: 'Ubuntu';
 }
 
 .icon{
@@ -35,31 +36,26 @@ button:active {
 }
 
 .h2{
-  font-family: 'Nimbus Sans L', sans-serif;
   color: #e6e6e6;
   font-size: 5.0em;
 }
 
 .h3{
-  font-family: 'Nimbus Sans L', sans-serif;
   color: #e6e6e6;
   font-size: 3em;
 }
 
 .h4{
-  font-family: 'Nimbus Sans L', sans-serif;
   color: #e6e6e6;
   font-size: 2em;
 }
 
 .h5{
-  font-family: 'Nimbus Sans L', sans-serif;
   color: #e6e6e6;
   font-size: 1.25em;
 }
 
 .h6{
-  font-family: 'Nimbus Sans L', sans-serif;
   color: #e6e6e6;
   font-size: 1em;
 }
