@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<!-- Generated with glade 3.22.1 -->
+<!-- Generated with glade 3.20.0 -->
 <interface>
   <requires lib="gtk+" version="3.20"/>
   <!-- interface-local-resource-path images -->
@@ -17,9 +17,6 @@
     <property name="default_height">540</property>
     <property name="decorated">False</property>
     <signal name="destroy" handler="close" swapped="no"/>
-    <child>
-      <placeholder/>
-    </child>
     <child>
       <object class="GtkBox">
         <property name="visible">True</property>
@@ -140,40 +137,46 @@
               </packing>
             </child>
             <child>
-              <object class="GtkBox" id="empty_widget">
-                <property name="width_request">150</property>
+              <object class="GtkBox" id="door_widget">
+                <property name="width_request">200</property>
                 <property name="visible">True</property>
                 <property name="can_focus">False</property>
-                <property name="homogeneous">True</property>
+                <property name="orientation">vertical</property>
                 <child>
-                  <object class="GtkBox" id="temperature1">
-                    <property name="width_request">200</property>
+                  <object class="GtkLabel" id="d_icon">
                     <property name="visible">True</property>
                     <property name="can_focus">False</property>
-                    <property name="orientation">vertical</property>
-                    <child>
-                      <object class="GtkLabel" id="t_label1">
-                        <property name="visible">True</property>
-                        <property name="can_focus">False</property>
-                        <property name="label" translatable="yes">
-</property>
-                      </object>
-                      <packing>
-                        <property name="expand">False</property>
-                        <property name="fill">False</property>
-                        <property name="position">1</property>
-                      </packing>
-                    </child>
                     <style>
-                      <class name="g_back"/>
+                      <class name="icon"/>
+                      <class name="door_back"/>
+                    </style>
+                  </object>
+                  <packing>
+                    <property name="expand">True</property>
+                    <property name="fill">True</property>
+                    <property name="position">0</property>
+                  </packing>
+                </child>
+                <child>
+                  <object class="GtkLabel" id="d_label">
+                    <property name="name">h_door_switch</property>
+                    <property name="visible">True</property>
+                    <property name="can_focus">False</property>
+                    <property name="label" translatable="yes">door</property>
+                    <property name="ellipsize">end</property>
+                    <style>
+                      <class name="h3"/>
                     </style>
                   </object>
                   <packing>
                     <property name="expand">False</property>
                     <property name="fill">True</property>
-                    <property name="position">0</property>
+                    <property name="position">1</property>
                   </packing>
                 </child>
+                <style>
+                  <class name="g_back"/>
+                </style>
               </object>
               <packing>
                 <property name="expand">False</property>

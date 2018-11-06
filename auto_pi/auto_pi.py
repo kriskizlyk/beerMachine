@@ -78,6 +78,9 @@ subprocess.call(['echo' ,'     Installing DS18B20 Temp Sensor...'])
 #process(['sudo', 'pip', 'install', 'smbus2'])
 process(['sudo', 'pip3', 'install', 'w1thermsensor'])
 
+subprocess.call(['echo' ,'     Updating RPi.GPIO...'])
+#process(['sudo', 'pip3', 'install', '--upgrade', 'RPi.GPIO'])
+
 subprocess.call(['echo', '     Enabling RaspberryPi Peripherals'])
 subprocess.call(['echo', '     Enabling VNC...'])
 subprocess.call(['raspi-config', 'nonint', 'do_vnc', '0'])

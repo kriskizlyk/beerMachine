@@ -5,6 +5,7 @@ from views.admin import Window
 from database.admin import DataBase
 from hardware.scale import Scale
 from hardware.temperature import TemperatureSensor
+from hardware.doorswitch import DoorSwitch
 
 if __name__ == '__main__':
 
@@ -15,6 +16,7 @@ if __name__ == '__main__':
     scale_1 = Scale('1')
     #scale_2 = Scale('2')
     temp_sensor = TemperatureSensor()
+    door_switch = DoorSwitch(5, 'i')
 
     Gtk.main()
 
@@ -25,12 +27,15 @@ if __name__ == '__main__':
     print('Stopping Hardware Services...')
     
     while True:
+        if (door_switch.is_busy() == False):
+            door_switch.stop_timers()
+            break
+        
+    while True:
         if (scale_1.is_busy() == False):
             scale_1.stop_timers()
             break
 
-    #scale_2.stop_timers()
-    
     while True:
         if (temp_sensor.is_busy() == False):
             temp_sensor.stop_timers()
