@@ -54,6 +54,7 @@ class KeyboardHandler():
         if len(value) >= 1:
             value = value[:-1]
             DataBase.set_local_value('keyboard_buffer', value)
+            print(DataBase.get_local_value('keyboard_buffer'))
             DataBase.keyboard_widgets['buffer'].set_label(DataBase.get_local_value('keyboard_buffer'))
 
 class Keyboard(Gtk.Window, GObject.GObject):

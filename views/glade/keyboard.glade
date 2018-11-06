@@ -118,7 +118,6 @@
                 <property name="visible">True</property>
                 <property name="can_focus">False</property>
                 <property name="orientation">vertical</property>
-                <signal name="button-release-event" handler="delete_letter" swapped="no"/>
                 <child>
                   <object class="GtkLabel" id="backspace_icon">
                     <property name="visible">True</property>

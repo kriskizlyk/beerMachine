@@ -32,7 +32,7 @@
   "__redraw": false,
   "__type": "label",
   "__write": 0,
-  "value": "0.695"
+  "value": "0.728"
  },
  "h_tap_1_name": {
   "__read": 0,
@@ -158,7 +158,7 @@
   "__redraw": false,
   "__type": "label",
   "__write": 0,
-  "value": "24.2"
+  "value": "24.5"
  },
  "h_username": {
   "__read": 0,

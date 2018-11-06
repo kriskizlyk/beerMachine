@@ -250,8 +250,8 @@
                 <property name="selectable">True</property>
                 <property name="ellipsize">end</property>
                 <property name="single_line_mode">True</property>
+                <property name="track_visited_links">False</property>
                 <signal name="button-release-event" handler="push_letter" swapped="no"/>
-                <signal name="enter-notify-event" handler="test" swapped="no"/>
                 <style>
                   <class name="h1"/>
                   <class name="g_back"/>
