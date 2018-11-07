@@ -3,6 +3,7 @@ gi.require_version('Gtk', '3.0')
 from gi.repository import Gtk
 from database.admin import DataBase
 from views.keyboard import Keyboard
+from views.settings import Settings
 
 class OverviewHandler():
     def close(self, *args):
@@ -13,3 +14,6 @@ class OverviewHandler():
 
     def set_name(self, label, button):
         Keyboard(label)
+
+    def open_settings(self, label, button):
+        Settings()

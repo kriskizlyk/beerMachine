@@ -9,6 +9,7 @@ class DataBase:
 
     glade_widgets = {} # Window Widgets in RAM
     keyboard_widgets = {}
+    settings_widgets = {}
 
     def create_widget_database(builder):
         ''' Creates a RAM library of widgets for local access. '''
@@ -27,6 +28,14 @@ class DataBase:
                 type(each_widget) == Gtk.Label or
                 type(each_widget) == Gtk.Window):
                 DataBase.keyboard_widgets[str(each_widget.get_name())] = each_widget
+
+    def create_widget_database3(builder):
+        ''' Creates a RAM library of widgets for local access. '''
+        for each_widget in builder:
+            if (type(each_widget) == Gtk.Button or
+                type(each_widget) == Gtk.Label or
+                type(each_widget) == Gtk.Window):
+                DataBase.settings_widgets[str(each_widget.get_name())] = each_widget
 
     def create_tag_database():
         ''' Creates RAM dictonary of TAGS from Widgets on the glade screen. '''
@@ -66,8 +75,8 @@ class DataBase:
         return value
 
     def set_value(tagname, value):
-        # old_value = DataBase.get_value(tagname)
         ''' Sets the value stored in RAM '''
+        # old_value = DataBase.get_value(tagname)
         try:
             DataBase.tags[str(tagname)]['value'] = value
         except:
@@ -86,7 +95,7 @@ class DataBase:
     def refresh_tag_database():
         ''' Refreshes RAM database '''
         ''' Refresh all widgets at once, or only if the redraw says to?!?'''
-        print('DataBase refresh.')
+        # print('DataBase refresh.')
         DataBase.__tag_database.refresh(DataBase.tags)
 
         ''' Reload all widgets values from RAM. '''

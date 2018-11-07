@@ -15,7 +15,7 @@ class Scale():
         self.read_scale_timer = TimerEvent(self.update_seconds, self.read_scale)
         self.read_scale_timer.start()
         self.busy = False
-    
+
     def is_busy(self):
         return self.busy
 
@@ -23,16 +23,16 @@ class Scale():
         self.busy = True
         address = 0x08
         command = pack('>B', 10)
-        data = 0        
+        data = 0
         result = 0
-        
+
         try:
             with SMBusWrapper(1) as bus:
                 write = i2c_msg.write(address, command)
-                read = i2c_msg.read(address, 5) 
+                read = i2c_msg.read(address, 5)
                 bus.i2c_rdwr(write, read)
                 data = list(read)
-                data.pop() # Have to get rid of the last on...smbus does something I am not sure why.
+                data.pop() # Have to get rid of the last on...smbus2 messes with the last word, not am sure why.
                 data = bytes(data)
                 result = unpack(">I", data)[0]
                 if (result < 0):
@@ -42,12 +42,13 @@ class Scale():
                     pass
                 else:
                     result = '{0:.3f}'.format(result / 1000.0)
-                    DataBase.set_value(self.h_tap_capacity, result)                    
-                #print("Scale reading success.  " + str(result))      
-            
+                    DataBase.set_value(self.h_tap_capacity, result)
+                #print("Scale reading success.  " + str(result))
+
         except:
-            print("Scale reading Failed.")        
-        
+            pass
+            # print("Scale reading Failed.")
+
         self.busy = False
         # x = float(DataBase.get_value(self.h_tap_capacity))
         # x = x + 1

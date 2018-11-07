@@ -1,22 +1,21 @@
 import os, gi
 import threading
-import time
 gi.require_version('Gtk', '3.0')
 from gi.repository import Gtk, Gdk, GLib, GObject
 from database.admin import DataBase
 
-from views.overview import OverviewHandler
-# from views.settings import SettingsHandler
-
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 VIEWS_DIR = os.path.join(BASE_DIR, 'views')
 
-class Window(Gtk.Window, GObject.GObject):
+class SettingsHandler():
+    def close(self, *args):
+        DataBase.settings_widgets['window'].destroy()
 
+class Settings(Gtk.Window, GObject.GObject):
     def __init__(self):
-        window_name = 'overview'
+        window_name = 'settings'
         path = os.path.join(VIEWS_DIR, 'glade')
-        gladefile = path + '/' + 'overview.glade'
+        gladefile = path + '/' + 'settings.glade'
 
         # Create a GTK Window Object
         builder = Gtk.Builder()
@@ -25,10 +24,10 @@ class Window(Gtk.Window, GObject.GObject):
         builder.add_from_file(gladefile)
 
         # Create a database of all the glade widgets.
-        DataBase.create_widget_database(builder.get_objects())
+        DataBase.create_widget_database3(builder.get_objects())
 
         # Link window to the windows handler
-        builder.connect_signals(eval('OverviewHandler()'))
+        builder.connect_signals(SettingsHandler)
 
         # Add css styling from my custom file.
         css = Gtk.CssProvider()
@@ -43,13 +42,4 @@ class Window(Gtk.Window, GObject.GObject):
         # Get the GTKWindow ID from the glade file and show window.
         window = builder.get_object(window_name)
 
-        # Show the window.make
         window.show_all()
-
-        # Add a Label Update using the built in GObject Thread.
-        GObject.timeout_add(100, self.label_refresh)
-
-    def label_refresh(self):
-        DataBase.set_value("date_time", time.strftime("%H:%M"))
-        DataBase.refresh_tag_database()
-        return True
