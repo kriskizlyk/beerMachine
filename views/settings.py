@@ -3,13 +3,17 @@ import threading
 gi.require_version('Gtk', '3.0')
 from gi.repository import Gtk, Gdk, GLib, GObject
 from database.admin import DataBase
+from views.keyboard import Keyboard
 
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 VIEWS_DIR = os.path.join(BASE_DIR, 'views')
 
 class SettingsHandler():
     def close(self, *args):
-        DataBase.settings_widgets['window'].destroy()
+        DataBase.settings_widgets['settings'].destroy()
+
+    def set_label(self, label, button):
+        Keyboard(label)
 
 class Settings(Gtk.Window, GObject.GObject):
     def __init__(self):
@@ -24,10 +28,10 @@ class Settings(Gtk.Window, GObject.GObject):
         builder.add_from_file(gladefile)
 
         # Create a database of all the glade widgets.
-        DataBase.create_widget_database3(builder.get_objects())
+        DataBase.create_widget_database(builder.get_objects())
 
         # Link window to the windows handler
-        builder.connect_signals(SettingsHandler)
+        builder.connect_signals(eval('SettingsHandler()'))
 
         # Add css styling from my custom file.
         css = Gtk.CssProvider()
@@ -43,3 +47,7 @@ class Settings(Gtk.Window, GObject.GObject):
         window = builder.get_object(window_name)
 
         window.show_all()
+
+    def label_refresh(self):
+        DataBase.refresh_tag_database()
+        return True

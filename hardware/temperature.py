@@ -1,6 +1,11 @@
 from database.admin import DataBase
 from system.timer import TimerEvent
-from w1thermsensor import W1ThermSensor
+
+try:
+    from w1thermsensor import W1ThermSensor
+except:
+    print("***WARNING*** w1thermsensor not loaded since this is not a RaspberryPi.")
+
 
 class TemperatureSensor():
 

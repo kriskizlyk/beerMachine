@@ -13,8 +13,9 @@ if __name__ == '__main__':
     DataBase.create_tag_database()
 
     print('Starting Hardware Services...')
-    scale_1 = Scale('1')
-    #scale_2 = Scale('2')
+
+    scale_co2 = Scale('co2', 0x08)
+    scale_1 = Scale('1', 0x09)
     temp_sensor = TemperatureSensor()
     door_switch = DoorSwitch(5, 'i')
 
@@ -23,14 +24,19 @@ if __name__ == '__main__':
     # If the system is told to shut down but durring a read these
     # services may not shut off in between reads.  Should use a proper
     # scheduler to see if the hanlder is busy or not.
-    
+
     print('Stopping Hardware Services...')
-    
+
     while True:
         if (door_switch.is_busy() == False):
             door_switch.stop_timers()
             break
-        
+
+    while True:
+        if (scale_co2.is_busy() == False):
+            scale_co2.stop_timers()
+            break
+
     while True:
         if (scale_1.is_busy() == False):
             scale_1.stop_timers()

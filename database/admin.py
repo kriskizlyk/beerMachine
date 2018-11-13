@@ -20,7 +20,6 @@ class DataBase:
                 if each_widget.get_name() != "GtkLabel":
                     DataBase.glade_widgets[str(each_widget.get_name())] = each_widget
 
-
     def create_widget_database2(builder):
         ''' Creates a RAM library of widgets for local access. '''
         for each_widget in builder:

@@ -9,7 +9,7 @@ VIEWS_DIR = os.path.join(BASE_DIR, 'views')
 
 class KeyboardHandler():
     def close(self, *args):
-        DataBase.keyboard_widgets['window'].destroy()
+        DataBase.keyboard_widgets['keyboard'].destroy()
 
     def push_enter(self, *args):
         DataBase.set_value(DataBase.get_local_value('keyboard_variable'),

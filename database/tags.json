@@ -4,7 +4,7 @@
   "__redraw": false,
   "__type": "label",
   "__write": 0,
-  "value": "16:16"
+  "value": "21:36"
  },
  "h_door_switch": {
   "__read": 0,
@@ -13,42 +13,63 @@
   "__write": 0,
   "value": "closed"
  },
- "h_keg_pressure": {
+ "h_scale_1_actual": {
   "__read": 0,
   "__redraw": false,
   "__type": "label",
   "__write": 0,
   "value": "####"
  },
- "h_tap_1_brew_date": {
+ "h_scale_1_brewer": {
   "__read": 0,
   "__redraw": false,
   "__type": "label",
   "__write": 0,
   "value": "####"
  },
- "h_tap_1_brewer": {
+ "h_scale_1_name": {
+  "__read": 0,
+  "__redraw": false,
+  "__type": "label",
+  "__write": 0,
+  "value": "Kris Beer 1"
+ },
+ "h_scale_1_style": {
   "__read": 0,
   "__redraw": false,
   "__type": "label",
   "__write": 0,
   "value": "####"
  },
- "h_tap_1_capacity": {
-  "__read": 0,
-  "__redraw": false,
-  "__type": "label",
-  "__write": 0,
-  "value": "0.000"
- },
- "h_tap_1_name": {
+ "h_scale_2_capacity": {
   "__read": 0,
   "__redraw": false,
   "__type": "label",
   "__write": 0,
   "value": "####"
  },
- "h_tap_1_style": {
+ "h_scale_3_capacity": {
+  "__read": 0,
+  "__redraw": false,
+  "__type": "label",
+  "__write": 0,
+  "value": "####"
+ },
+ "h_scale_4_capacity": {
+  "__read": 0,
+  "__redraw": false,
+  "__type": "label",
+  "__write": 0,
+  "value": "####"
+ },
+ "h_scale_co2_actual": {
+  "__read": 0,
+  "__redraw": false,
+  "__type": "label",
+  "__write": 0,
+  "value": "####"
+ },
+ "h_tap_1_brewdate": {
   "__read": 0,
   "__redraw": false,
   "__type": "label",
@@ -68,13 +89,6 @@
   "__type": "label",
   "__write": 0,
   "value": "####"
- },
- "h_tap_2_capacity": {
-  "__read": 0,
-  "__redraw": false,
-  "__type": "label",
-  "__write": 0,
-  "value": 1726
  },
  "h_tap_2_name": {
   "__read": 0,
@@ -104,19 +118,12 @@
   "__write": 0,
   "value": "####"
  },
- "h_tap_3_capacity": {
-  "__read": 0,
-  "__redraw": false,
-  "__type": "label",
-  "__write": 0,
-  "value": "####"
- },
  "h_tap_3_name": {
   "__read": 0,
   "__redraw": false,
   "__type": "label",
   "__write": 0,
-  "value": "Hello Gregory"
+  "value": "####"
  },
  "h_tap_3_style": {
   "__read": 0,
@@ -133,13 +140,6 @@
   "value": "####"
  },
  "h_tap_4_brewer": {
-  "__read": 0,
-  "__redraw": false,
-  "__type": "label",
-  "__write": 0,
-  "value": "####"
- },
- "h_tap_4_capacity": {
   "__read": 0,
   "__redraw": false,
   "__type": "label",
@@ -165,7 +165,7 @@
   "__redraw": false,
   "__type": "label",
   "__write": 0,
-  "value": "24.9"
+  "value": "####"
  },
  "h_username": {
   "__read": 0,
