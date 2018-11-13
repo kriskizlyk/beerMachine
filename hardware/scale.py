@@ -34,29 +34,29 @@ class Scale():
     def set_value(self, tagname, value):
         if (self.is_busy() == False):
             if (tagname == 'zero'):
-                __send_command(100, int(value))
+                _send_command(100, int(value))
             elif (tagname == 'span'):
-                __send_command(101, int(value))
+                _send_command(101, int(value))
             elif (tagname == 'tare'):
-                __send_command(102, int(value))
+                _send_command(102, int(value))
             elif (tagname == self.h_scale_dec):
-                __send_command(103, int(value))
+                _send_command(103, int(value))
             elif (tagname == self.h_scale_grads):
-                __send_command(104, int(value))
+                _send_command(104, int(value))
             else:
                 print('Command Write: Scale ' + str(self.scale_number) + tagname + ' command failed. Action not found.')
         else:
             print('Command Write: Scale ' + str(self.scale_number) + tagname + ' command failed. Busy.')
 
     def start_timers(self):
-        self.read_scale_timer = TimerEvent(self.update_seconds, self.__update_weight)
+        self.read_scale_timer = TimerEvent(self.update_seconds, self._update_weight)
         self.read_scale_timer.start()
 
     def stop_timers(self):
         print('Stopping scale ' + self.scale_number + ' read event.')
         self.read_scale_timer.cancel()
 
-    def __send_command(self, cmd, value):
+    def _send_command(self, cmd, value):
         self.busy = True
         bytes_to_read = 1
         command = [pack('>B', cmd), pack('>I', value)]
@@ -82,7 +82,7 @@ class Scale():
 
         self.busy = False
 
-    def __get_command(self, cmd):
+    def _get_command(self, cmd):
         self.busy = True
         bytes_to_read = 4
         command = pack('>B', cmd)
@@ -106,8 +106,8 @@ class Scale():
         self.busy = False
         return result
 
-    def __update_weight(self):
-        data = self.__get_command(10)
+    def _update_weight(self):
+        data = self._get_command(10)
         if (data == False):
             pass
 

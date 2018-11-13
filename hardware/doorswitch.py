@@ -1,13 +1,14 @@
 from database.admin import DataBase
 from system.timer import TimerEvent
 
-try:
-    import RPi.GPIO as GPIO
-except:
-    print("***WARNING*** GPIO not loaded since this is not a RaspberryPi.")
-
 class DoorSwitch:
+
     def __init__(self, pin_number, type):
+        try:
+            import RPi.GPIO as GPIO
+        except:
+            print("***WARNING*** GPIO not loaded since this is not a RaspberryPi.")
+
         self.door_switch = 'h_door_switch'
         self.pin_number = pin_number
         self.pin_state = 0

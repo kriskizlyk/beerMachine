@@ -6,7 +6,7 @@ class TimerEvent():
         self.t = t
         self.hFunction = hFunction
         self.timed_out = False
-        self.__error_flag = False
+        self._error_flag = False
         self.retry = 1
         self.status = True
 
@@ -14,10 +14,10 @@ class TimerEvent():
         # Run the function once the timer thread is done.
 
         # Timer did not catch an error, reset timeout count.
-        if (self.__error_flag == False):
+        if (self._error_flag == False):
             self.retry = 1
         else:
-            self.__error_flag = False
+            self._error_flag = False
 
         # Timer cycle was complete, restart timer.
         if (self.timed_out == False):
@@ -32,7 +32,7 @@ class TimerEvent():
 
     def error(self):
         self.retry = self.retry - 1
-        self.__error_flag = True
+        self._error_flag = True
         if (self.retry < 1):
             self.timed_out = True
             self.status = False

@@ -10,7 +10,7 @@ except:
 class TemperatureSensor():
 
     def __init__(self):
-        self.update_seconds = 5
+        self.update_seconds = 1
         self.h_temperature = 'h_temperature'
 
         self.read_sensor_timer = TimerEvent(self.update_seconds, self.read_sensor)

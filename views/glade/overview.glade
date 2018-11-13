@@ -200,6 +200,8 @@
                     <property name="can_focus">False</property>
                     <property name="double_buffered">False</property>
                     <property name="label" translatable="yes">12:34</property>
+                    <property name="selectable">True</property>
+                    <signal name="button-release-event" handler="click" swapped="no"/>
                     <style>
                       <class name="h1"/>
                     </style>

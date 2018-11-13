@@ -4,7 +4,7 @@
   "__redraw": false,
   "__type": "label",
   "__write": 0,
-  "value": "21:36"
+  "value": "16:10"
  },
  "h_door_switch": {
   "__read": 0,
@@ -32,7 +32,7 @@
   "__redraw": false,
   "__type": "label",
   "__write": 0,
-  "value": "Kris Beer 1"
+  "value": "####"
  },
  "h_scale_1_style": {
   "__read": 0,
