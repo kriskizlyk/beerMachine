@@ -1,10 +1,10 @@
 import os, gi
 gi.require_version('Gtk', '3.0')
-from gi.repository import Gtk
+from gi.repository import Gtk, Gdk, GLib, GObject
 from database.admin import DataBase
+from views.window import Window
 from views.keyboard import Keyboard
 from views.settings import Settings
-from views.window import Window
 
 class OverviewHandler():
     def close(self, *args):

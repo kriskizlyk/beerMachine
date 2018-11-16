@@ -194,12 +194,13 @@
                 <property name="can_focus">False</property>
                 <property name="orientation">vertical</property>
                 <child>
-                  <object class="GtkLabel">
-                    <property name="name">date_time</property>
+                  <object class="GtkLabel" id="time_test">
                     <property name="visible">True</property>
                     <property name="can_focus">False</property>
                     <property name="double_buffered">False</property>
                     <property name="label" translatable="yes">12:34</property>
+                    <property name="selectable">True</property>
+                    <signal name="button-release-event" handler="click" swapped="no"/>
                     <style>
                       <class name="h1"/>
                     </style>

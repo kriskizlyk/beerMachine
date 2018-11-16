@@ -1,8 +1,10 @@
 import os, gi
-import threading
 gi.require_version('Gtk', '3.0')
 from gi.repository import Gtk, Gdk, GLib, GObject
 from database.admin import DataBase
+from views.window import Window
+
+import threading
 
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 VIEWS_DIR = os.path.join(BASE_DIR, 'views')
@@ -56,41 +58,14 @@ class KeyboardHandler():
             DataBase.set_local_value('keyboard_buffer', value)
             DataBase.keyboard_widgets['buffer'].set_label(DataBase.get_local_value('keyboard_buffer'))
 
-class Keyboard(Gtk.Window, GObject.GObject):
+class Keyboard(Window):
     def __init__(self, tagname):
-        window_name = 'keyboard'
-        path = os.path.join(VIEWS_DIR, 'glade')
-        gladefile = path + '/' + 'keyboard.glade'
-
-        # Create a GTK Window Object
-        builder = Gtk.Builder()
-
-        # Link all the GTK objects to a glade file.
-        builder.add_from_file(gladefile)
-
-        # Create a database of all the glade widgets.
-        DataBase.create_widget_database2(builder.get_objects())
-
-        # Link window to the windows handler
-        builder.connect_signals(KeyboardHandler)
-
-        # Add css styling from my custom file.
-        css = Gtk.CssProvider()
-        css.load_from_path(VIEWS_DIR + '/glade/css/custom.css')
-
-        context = Gtk.StyleContext()
-        context.add_provider_for_screen(
-            Gdk.Screen.get_default(),
-            css,
-            Gtk.STYLE_PROVIDER_PRIORITY_APPLICATION)
-
-        # Get the GTKWindow ID from the glade file and show window.
-        window = builder.get_object(window_name)
+        Window.__init__(self, 'keyboard', KeyboardHandler())
+        print("Creating Keyboard Window...")
 
         # Create the local tags.
         DataBase.set_local_value('keyboard_buffer', DataBase.get_value(tagname.get_name()))
         DataBase.keyboard_widgets['buffer'].set_label(DataBase.get_local_value('keyboard_buffer'))
         DataBase.set_local_value('keyboard_shift_pointer', 1)
         DataBase.set_local_value('keyboard_variable', tagname.get_name())
-
         window.show_all()

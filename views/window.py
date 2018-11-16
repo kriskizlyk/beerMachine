@@ -1,6 +1,6 @@
 import os, gi
-import threading
 import time
+import threading
 gi.require_version('Gtk', '3.0')
 from gi.repository import Gtk, Gdk, GLib, GObject
 from database.admin import DataBase
@@ -15,16 +15,16 @@ class Window(Gtk.Window, GObject.GObject):
         gladefile = path + '/' + window_name + '.glade'
 
         # Create a GTK Window Object
-        builder = Gtk.Builder()
+        self.builder = Gtk.Builder()
 
         # Link all the GTK objects to a glade file.
-        builder.add_from_file(gladefile)
+        self.builder.add_from_file(gladefile)
 
         # Create a database of all the glade widgets.
-        DataBase.create_widget_database(builder.get_objects())
+        DataBase.create_widget_database(self.builder.get_objects())
 
         # Link window to the windows handler
-        builder.connect_signals(handler)
+        self.builder.connect_signals(handler)
 
         # Add css styling from my custom file.
         css = Gtk.CssProvider()
@@ -37,15 +37,27 @@ class Window(Gtk.Window, GObject.GObject):
             Gtk.STYLE_PROVIDER_PRIORITY_APPLICATION)
 
         # Get the GTKWindow ID from the glade file and show window.
-        window = builder.get_object(window_name)
-
-        # Show the window.make
-        window.show_all()
+        self.window = self.builder.get_object(window_name)
 
         # Add a Label Update using the built in GObject Thread.
-        GObject.timeout_add(100, self.label_refresh)
+        GObject.timeout_add(1000, self.update_widget_label)
 
-    def label_refresh(self):
-        DataBase.set_value("date_time", time.strftime("%H:%M"))
-        DataBase.refresh_tag_database()
+        # Show the window.make
+        self.window.show_all()
+
+    def update_widget_label(self):
+        # x = self.builder.get_object("time_test")
+        # x.set_label(str("holy hell"))
+        # DataBase.set_value("date_time", time.strftime("%H:%M"))
+
+        # DataBase.refresh_tag_database()
+        for each_tag in DataBase.tags:
+            try:
+                if DataBase.tags[each_tag]['__type'] == 'label':
+                    widget = self.builder.get_object(each_tag)
+                    tag = DataBase.get_value(str(each_tag))
+                    widget.set_label(str(tag))
+            except:
+                print(each_tag + str(" not found."))
+
         return True

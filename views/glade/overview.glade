@@ -194,8 +194,7 @@
                 <property name="can_focus">False</property>
                 <property name="orientation">vertical</property>
                 <child>
-                  <object class="GtkLabel">
-                    <property name="name">date_time</property>
+                  <object class="GtkLabel" id="time_test">
                     <property name="visible">True</property>
                     <property name="can_focus">False</property>
                     <property name="double_buffered">False</property>
@@ -555,8 +554,7 @@
                               </packing>
                             </child>
                             <child>
-                              <object class="GtkLabel" id="scale_1_brewdate_label">
-                                <property name="name">h_tap_1_brewdate</property>
+                              <object class="GtkLabel" id="scale_1_brewdate">
                                 <property name="visible">True</property>
                                 <property name="can_focus">False</property>
                                 <property name="label" translatable="yes">XXX</property>

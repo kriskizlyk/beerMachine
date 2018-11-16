@@ -27,14 +27,14 @@ class DataBase:
                 type(each_widget) == Gtk.Label or
                 type(each_widget) == Gtk.Window):
                 DataBase.keyboard_widgets[str(each_widget.get_name())] = each_widget
-
-    def create_widget_database3(builder):
-        ''' Creates a RAM library of widgets for local access. '''
-        for each_widget in builder:
-            if (type(each_widget) == Gtk.Button or
-                type(each_widget) == Gtk.Label or
-                type(each_widget) == Gtk.Window):
-                DataBase.settings_widgets[str(each_widget.get_name())] = each_widget
+    #
+    # def create_widget_database3(builder):
+    #     ''' Creates a RAM library of widgets for local access. '''
+    #     for each_widget in builder:
+    #         if (type(each_widget) == Gtk.Button or
+    #             type(each_widget) == Gtk.Label or
+    #             type(each_widget) == Gtk.Window):
+    #             DataBase.settings_widgets[str(each_widget.get_name())] = each_widget
 
     def create_tag_database():
         ''' Creates RAM dictonary of TAGS from Widgets on the glade screen. '''
