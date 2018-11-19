@@ -28,6 +28,8 @@ class DoorSwitch:
         self.read_switch_timer.start()
         self.busy = False
 
+        print("Door Switch created.")
+
     def is_busy(self):
         return self.busy
 

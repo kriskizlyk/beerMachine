@@ -6,6 +6,7 @@ from database.admin import DataBase
 from hardware.admin import Hardware
 
 if __name__ == '__main__':
+    DataBase()
     hardware = Hardware()
     RunViewServer()
     hardware.stop_services()

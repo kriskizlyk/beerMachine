@@ -41,7 +41,7 @@
                     <property name="visible">True</property>
                     <property name="can_focus">False</property>
                     <property name="selectable">True</property>
-                    <signal name="button-release-event" handler="close" swapped="no"/>
+                    <signal name="button-release-event" handler="close" object="settings" swapped="no"/>
                     <style>
                       <class name="exit_back"/>
                       <class name="icon"/>
@@ -131,7 +131,7 @@
                             <property name="visible">True</property>
                             <property name="can_focus">False</property>
                             <child>
-                              <object class="GtkLabel" id="scale_1_name_text">
+                              <object class="GtkLabel" id="h_scale_1_name">
                                 <property name="name">h_scale_1_name</property>
                                 <property name="visible">True</property>
                                 <property name="can_focus">False</property>
@@ -180,7 +180,7 @@
                               </packing>
                             </child>
                             <child>
-                              <object class="GtkLabel" id="scale_1_brewer_label">
+                              <object class="GtkLabel" id="h_scale_1_brewer">
                                 <property name="name">h_scale_1_brewer</property>
                                 <property name="visible">True</property>
                                 <property name="can_focus">False</property>
@@ -227,8 +227,8 @@
                               </packing>
                             </child>
                             <child>
-                              <object class="GtkLabel" id="scale_1_brewstyle_label">
-                                <property name="name">h_tap_1_brewstyle</property>
+                              <object class="GtkLabel" id="h_scale_1_brewstyle">
+                                <property name="name">h_scale_1_brewstyle</property>
                                 <property name="visible">True</property>
                                 <property name="can_focus">False</property>
                                 <property name="label" translatable="yes">XXX</property>
@@ -274,8 +274,8 @@
                               </packing>
                             </child>
                             <child>
-                              <object class="GtkLabel" id="scale_1_brewdate_label">
-                                <property name="name">h_tap_1_brewdate</property>
+                              <object class="GtkLabel" id="h_scale_1_brewdate">
+                                <property name="name">h_scale_1_brewdate</property>
                                 <property name="visible">True</property>
                                 <property name="can_focus">False</property>
                                 <property name="label" translatable="yes">XXX</property>
@@ -321,14 +321,13 @@
                               </packing>
                             </child>
                             <child>
-                              <object class="GtkLabel" id="scale_1_actual_label">
+                              <object class="GtkLabel" id="h_scale_1_actual">
                                 <property name="name">h_scale_1_actual</property>
                                 <property name="visible">True</property>
                                 <property name="can_focus">False</property>
                                 <property name="label" translatable="yes">XXX</property>
                                 <property name="selectable">True</property>
                                 <property name="ellipsize">end</property>
-                                <signal name="button-release-event" handler="set_label" swapped="no"/>
                                 <style>
                                   <class name="h3"/>
                                 </style>
@@ -368,7 +367,7 @@
                               </packing>
                             </child>
                             <child>
-                              <object class="GtkLabel" id="scale_1_grads_label">
+                              <object class="GtkLabel" id="h_scale_1_grads">
                                 <property name="name">h_scale_1_grads</property>
                                 <property name="visible">True</property>
                                 <property name="can_focus">False</property>
@@ -415,7 +414,7 @@
                               </packing>
                             </child>
                             <child>
-                              <object class="GtkLabel" id="scale1_decimal_label">
+                              <object class="GtkLabel" id="h_scale_1_decimal">
                                 <property name="name">h_scale_1_decimal</property>
                                 <property name="visible">True</property>
                                 <property name="can_focus">False</property>
@@ -462,7 +461,7 @@
                               </packing>
                             </child>
                             <child>
-                              <object class="GtkLabel" id="scale_1_tare_label">
+                              <object class="GtkLabel" id="h_scale_1_tare">
                                 <property name="name">h_scale_1_tare</property>
                                 <property name="visible">True</property>
                                 <property name="can_focus">False</property>
@@ -509,7 +508,7 @@
                               </packing>
                             </child>
                             <child>
-                              <object class="GtkLabel" id="scale_1_zero_label">
+                              <object class="GtkLabel" id="h_scale_1_zero">
                                 <property name="name">h_scale_1_zero</property>
                                 <property name="visible">True</property>
                                 <property name="can_focus">False</property>
@@ -556,14 +555,13 @@
                               </packing>
                             </child>
                             <child>
-                              <object class="GtkLabel" id="scale_1_address_label">
-                                <property name="name">h_tap_1_address</property>
+                              <object class="GtkLabel" id="h_scale_1_address">
+                                <property name="name">h_scale_1_address</property>
                                 <property name="visible">True</property>
                                 <property name="can_focus">False</property>
                                 <property name="label" translatable="yes">XXX</property>
                                 <property name="selectable">True</property>
                                 <property name="ellipsize">end</property>
-                                <signal name="button-release-event" handler="set_label" swapped="no"/>
                                 <style>
                                   <class name="h3"/>
                                 </style>

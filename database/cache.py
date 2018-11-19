@@ -8,7 +8,6 @@ import os
 import json
 
 class Cache:
-
     def __init__(self, filename):
         self.file_name = os.path.dirname(os.path.dirname(os.path.abspath(__file__))) + '/database/' + filename + '.json'
         self.data = self.__load_cache()
@@ -18,7 +17,8 @@ class Cache:
         return self.data
 
     def refresh(self, ram_data):
-        # Data is loaded from file, Data updated from Ram, Data Saved
+        ''' RAM ---> DATA, DATA --> FILE. '''
+
         from_file = self.get_data()
         if not from_file:
             from_file = {}

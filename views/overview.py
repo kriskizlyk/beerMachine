@@ -5,26 +5,25 @@ from database.admin import DataBase
 from views.window import Window
 from views.keyboard import Keyboard
 from views.settings import Settings
-import time
+
+# import threading
+# import time
 
 class Overview(Window):
     def __init__(self):
-        Window.__init__(self, 'overview', OverviewHandler())
         print("Creating Overview Window...")
-        x = self.builder.get_object("time_test")
-        x.set_label(str("holy hell"))
+        Window.__init__(self, 'overview', OverviewHandler)
 
-class OverviewHandler():
+class OverviewHandler(Overview):
     def close(self, *args):
+        # The following will always close the entire project.
         Gtk.main_quit()
 
     def click(self, *args):
-        print("clicked")
-        x = self.builder.get_object("time_test")
-        # x.set_label(str("holy hell"))
+        self.set_label(str("beaver"))
 
-    def set_name(self, *args):
-        Keyboard(label)
+    def set_label(self, *args):
+        Keyboard(self)
 
     def open_settings(self, *args):
         Settings()

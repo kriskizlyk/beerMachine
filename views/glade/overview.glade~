@@ -195,6 +195,7 @@
                 <property name="orientation">vertical</property>
                 <child>
                   <object class="GtkLabel" id="time_test">
+                    <property name="name">time_test</property>
                     <property name="visible">True</property>
                     <property name="can_focus">False</property>
                     <property name="double_buffered">False</property>
@@ -774,7 +775,7 @@
                               </packing>
                             </child>
                             <child>
-                              <object class="GtkLabel" id="h_scale_2_brewdate">
+                              <object class="GtkLabel" id="h_tap_2_brew_date">
                                 <property name="name">h_tap_2_brew_date</property>
                                 <property name="visible">True</property>
                                 <property name="can_focus">False</property>
@@ -847,7 +848,6 @@
                                 <property name="label" translatable="yes">TAP NAME</property>
                                 <property name="selectable">True</property>
                                 <property name="ellipsize">end</property>
-                                <signal name="button-press-event" handler="set_name" swapped="no"/>
                                 <style>
                                   <class name="h2"/>
                                 </style>

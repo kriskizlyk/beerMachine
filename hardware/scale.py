@@ -8,11 +8,11 @@ from decimal import Decimal
 class Scale():
 
     def __init__(self, scale_number, address):
-        self.address = address
-        self.scale_number = scale_number
+        self.address = str(address)
+        self.scale_number = str(scale_number)
 
         self.h_scale_address = 'h_scale_' + self.scale_number + '_address'
-        DataBase.set_value(self.h_scale_address, int(address))
+        DataBase.set_value(self.h_scale_address, address)
         self.h_scale_name = 'h_scale_' + self.scale_number + '_name'
         self.h_scale_actual = 'h_scale_' + self.scale_number + '_actual'
         self.h_scale_dec = 'h_scale_' + self.scale_number + '_decimal'
@@ -27,6 +27,8 @@ class Scale():
         self.busy = False
         self.update_seconds = 0.1
         self.start_timers()
+
+        print("Scale " + str(self.scale_number) + " created.")
 
     def is_busy(self):
         return self.busy

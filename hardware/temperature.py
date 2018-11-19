@@ -17,6 +17,8 @@ class TemperatureSensor():
         self.read_sensor_timer.start()
         self.busy = False
 
+        print("Temperature Sensor created.")
+
     def is_busy(self):
         return self.busy
 
@@ -29,6 +31,7 @@ class TemperatureSensor():
             temp = '{0:.1f}'.format(temp)
             DataBase.set_value(self.h_temperature, temp)
         except:
+            self.read_sensor_timer.error()
             print("Temperature Sensor reading failed.")
 
         self.busy = False
