@@ -11,5 +11,4 @@ VIEWS_DIR = os.path.join(BASE_DIR, 'views')
 
 def RunViewServer():
     win = Overview()
-    DataBase.create_tag_database()
     Gtk.main()

@@ -5,6 +5,14 @@ from database.admin import DataBase
 from views.window import Window
 from views.keyboard import Keyboard
 from views.settings import Settings
+import time
+
+class Overview(Window):
+    def __init__(self):
+        Window.__init__(self, 'overview', OverviewHandler())
+        print("Creating Overview Window...")
+        x = self.builder.get_object("time_test")
+        x.set_label(str("holy hell"))
 
 class OverviewHandler():
     def close(self, *args):
@@ -12,15 +20,11 @@ class OverviewHandler():
 
     def click(self, *args):
         print("clicked")
-        # DataBase.set_value(self.h_tap_capacity, 1)
+        x = self.builder.get_object("time_test")
+        # x.set_label(str("holy hell"))
 
-    def set_name(self, label, button):
+    def set_name(self, *args):
         Keyboard(label)
 
-    def open_settings(self, label, button):
+    def open_settings(self, *args):
         Settings()
-
-class Overview(Window):
-    def __init__(self):
-        Window.__init__(self, 'overview', OverviewHandler())
-        print("Creating Overview Window...")

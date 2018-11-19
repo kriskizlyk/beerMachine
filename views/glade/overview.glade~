@@ -58,7 +58,7 @@
                       </packing>
                     </child>
                     <child>
-                      <object class="GtkLabel" id="t_label">
+                      <object class="GtkLabel" id="h_temperature">
                         <property name="name">h_temperature</property>
                         <property name="visible">True</property>
                         <property name="can_focus">False</property>
@@ -113,7 +113,7 @@
                   </packing>
                 </child>
                 <child>
-                  <object class="GtkLabel" id="kegpressure">
+                  <object class="GtkLabel" id="h_scale_co2_actual">
                     <property name="name">h_scale_co2_actual</property>
                     <property name="visible">True</property>
                     <property name="can_focus">False</property>
@@ -162,7 +162,7 @@
                   </packing>
                 </child>
                 <child>
-                  <object class="GtkLabel" id="d_label">
+                  <object class="GtkLabel" id="h_door_switch">
                     <property name="name">h_door_switch</property>
                     <property name="visible">True</property>
                     <property name="can_focus">False</property>
@@ -292,7 +292,7 @@
                   </packing>
                 </child>
                 <child>
-                  <object class="GtkLabel" id="u_label">
+                  <object class="GtkLabel" id="h_username">
                     <property name="name">h_username</property>
                     <property name="visible">True</property>
                     <property name="can_focus">False</property>
@@ -399,7 +399,7 @@
                             <property name="visible">True</property>
                             <property name="can_focus">False</property>
                             <child>
-                              <object class="GtkLabel" id="scale_1_name">
+                              <object class="GtkLabel" id="h_scale_1_name">
                                 <property name="name">h_scale_1_name</property>
                                 <property name="visible">True</property>
                                 <property name="can_focus">False</property>
@@ -426,7 +426,7 @@
                           </packing>
                         </child>
                         <child>
-                          <object class="GtkLabel" id="scale_1_style">
+                          <object class="GtkLabel" id="h_scale_1_style">
                             <property name="name">h_scale_1_style</property>
                             <property name="visible">True</property>
                             <property name="can_focus">False</property>
@@ -464,7 +464,7 @@
                               </packing>
                             </child>
                             <child>
-                              <object class="GtkLabel" id="scale_1_actual_label">
+                              <object class="GtkLabel" id="h_scale_1_actual">
                                 <property name="name">h_scale_1_actual</property>
                                 <property name="visible">True</property>
                                 <property name="can_focus">False</property>
@@ -509,7 +509,7 @@
                               </packing>
                             </child>
                             <child>
-                              <object class="GtkLabel" id="scale_1_brewer_label">
+                              <object class="GtkLabel" id="h_scale_1_brewer">
                                 <property name="name">h_scale_1_brewer</property>
                                 <property name="visible">True</property>
                                 <property name="can_focus">False</property>
@@ -554,8 +554,8 @@
                               </packing>
                             </child>
                             <child>
-                              <object class="GtkLabel" id="scale_1_brewdate_label">
-                                <property name="name">h_tap_1_brewdate</property>
+                              <object class="GtkLabel" id="h_scale_1_brewdate">
+                                <property name="name">h_scale_1_brewdate</property>
                                 <property name="visible">True</property>
                                 <property name="can_focus">False</property>
                                 <property name="label" translatable="yes">XXX</property>
@@ -620,8 +620,8 @@
                             <property name="visible">True</property>
                             <property name="can_focus">False</property>
                             <child>
-                              <object class="GtkLabel">
-                                <property name="name">h_tap_2_name</property>
+                              <object class="GtkLabel" id="h_scale_2_name">
+                                <property name="name">h_scale_2_name</property>
                                 <property name="visible">True</property>
                                 <property name="can_focus">False</property>
                                 <property name="label" translatable="yes">TAP NAME</property>
@@ -646,8 +646,8 @@
                           </packing>
                         </child>
                         <child>
-                          <object class="GtkLabel">
-                            <property name="name">h_tap_2_style</property>
+                          <object class="GtkLabel" id="h_scale_2_style">
+                            <property name="name">h_scale_2_style</property>
                             <property name="visible">True</property>
                             <property name="can_focus">False</property>
                             <property name="label" translatable="yes">Brew Style</property>
@@ -684,8 +684,8 @@
                               </packing>
                             </child>
                             <child>
-                              <object class="GtkLabel">
-                                <property name="name">h_scale_2_capacity</property>
+                              <object class="GtkLabel" id="h_scale_2_actual">
+                                <property name="name">h_scale_2_actual</property>
                                 <property name="visible">True</property>
                                 <property name="can_focus">False</property>
                                 <property name="label" translatable="yes">XXX</property>
@@ -729,8 +729,8 @@
                               </packing>
                             </child>
                             <child>
-                              <object class="GtkLabel">
-                                <property name="name">h_tap_2_brewer</property>
+                              <object class="GtkLabel" id="h_scale_2_brewer">
+                                <property name="name">h_scale_2_brewer</property>
                                 <property name="visible">True</property>
                                 <property name="can_focus">False</property>
                                 <property name="label" translatable="yes">XXX</property>
@@ -774,7 +774,7 @@
                               </packing>
                             </child>
                             <child>
-                              <object class="GtkLabel">
+                              <object class="GtkLabel" id="h_scale_2_brewdate">
                                 <property name="name">h_tap_2_brew_date</property>
                                 <property name="visible">True</property>
                                 <property name="can_focus">False</property>
@@ -840,8 +840,8 @@
                             <property name="visible">True</property>
                             <property name="can_focus">False</property>
                             <child>
-                              <object class="GtkLabel">
-                                <property name="name">h_tap_3_name</property>
+                              <object class="GtkLabel" id="h_scale_3_name">
+                                <property name="name">h_scale_3_name</property>
                                 <property name="visible">True</property>
                                 <property name="can_focus">False</property>
                                 <property name="label" translatable="yes">TAP NAME</property>
@@ -866,8 +866,8 @@
                           </packing>
                         </child>
                         <child>
-                          <object class="GtkLabel">
-                            <property name="name">h_tap_3_style</property>
+                          <object class="GtkLabel" id="h_scale_3_style">
+                            <property name="name">h_scale_3_style</property>
                             <property name="visible">True</property>
                             <property name="can_focus">False</property>
                             <property name="label" translatable="yes">Brew Style</property>
@@ -904,8 +904,8 @@
                               </packing>
                             </child>
                             <child>
-                              <object class="GtkLabel">
-                                <property name="name">h_scale_3_capacity</property>
+                              <object class="GtkLabel" id="h_scale_3_actual">
+                                <property name="name">h_scale_3_actual</property>
                                 <property name="visible">True</property>
                                 <property name="can_focus">False</property>
                                 <property name="label" translatable="yes">XXX</property>
@@ -949,8 +949,8 @@
                               </packing>
                             </child>
                             <child>
-                              <object class="GtkLabel">
-                                <property name="name">h_tap_3_brewer</property>
+                              <object class="GtkLabel" id="h_scale_3_brewer">
+                                <property name="name">h_scale_3_brewer</property>
                                 <property name="visible">True</property>
                                 <property name="can_focus">False</property>
                                 <property name="label" translatable="yes">XXX</property>
@@ -994,8 +994,8 @@
                               </packing>
                             </child>
                             <child>
-                              <object class="GtkLabel">
-                                <property name="name">h_tap_3_brew_date</property>
+                              <object class="GtkLabel" id="h_scale_3_brewdate">
+                                <property name="name">h_scale_3_brewdate</property>
                                 <property name="visible">True</property>
                                 <property name="can_focus">False</property>
                                 <property name="label" translatable="yes">XXX</property>
@@ -1060,8 +1060,8 @@
                             <property name="visible">True</property>
                             <property name="can_focus">False</property>
                             <child>
-                              <object class="GtkLabel">
-                                <property name="name">h_tap_4_name</property>
+                              <object class="GtkLabel" id="h_scale_4_name">
+                                <property name="name">h_scale_4_name</property>
                                 <property name="visible">True</property>
                                 <property name="can_focus">False</property>
                                 <property name="label" translatable="yes">TAP NAME</property>
@@ -1085,8 +1085,8 @@
                           </packing>
                         </child>
                         <child>
-                          <object class="GtkLabel">
-                            <property name="name">h_tap_4_style</property>
+                          <object class="GtkLabel" id="h_scale_4_style">
+                            <property name="name">h_scale_4_style</property>
                             <property name="visible">True</property>
                             <property name="can_focus">False</property>
                             <property name="label" translatable="yes">Brew Style</property>
@@ -1123,8 +1123,8 @@
                               </packing>
                             </child>
                             <child>
-                              <object class="GtkLabel">
-                                <property name="name">h_scale_4_capacity</property>
+                              <object class="GtkLabel" id="h_scale_4_actual">
+                                <property name="name">h_scale_4_actual</property>
                                 <property name="visible">True</property>
                                 <property name="can_focus">False</property>
                                 <property name="label" translatable="yes">XXX</property>
@@ -1168,8 +1168,8 @@
                               </packing>
                             </child>
                             <child>
-                              <object class="GtkLabel">
-                                <property name="name">h_tap_4_brewer</property>
+                              <object class="GtkLabel" id="h_scale_4_brewer">
+                                <property name="name">h_scale_4_brewer</property>
                                 <property name="visible">True</property>
                                 <property name="can_focus">False</property>
                                 <property name="label" translatable="yes">XXX</property>
@@ -1213,8 +1213,8 @@
                               </packing>
                             </child>
                             <child>
-                              <object class="GtkLabel">
-                                <property name="name">h_tap_4_brew_date</property>
+                              <object class="GtkLabel" id="h_scale_4_brewdate">
+                                <property name="name">h_scale_4_brewdate</property>
                                 <property name="visible">True</property>
                                 <property name="can_focus">False</property>
                                 <property name="label" translatable="yes">XXX</property>

@@ -10,7 +10,7 @@ VIEWS_DIR = os.path.join(BASE_DIR, 'views')
 
 class Window(Gtk.Window, GObject.GObject):
     def __init__(self, name, handler):
-        window_name = name
+        window_name = str(name)
         path = os.path.join(VIEWS_DIR, 'glade')
         gladefile = path + '/' + window_name + '.glade'
 
@@ -21,7 +21,10 @@ class Window(Gtk.Window, GObject.GObject):
         self.builder.add_from_file(gladefile)
 
         # Create a database of all the glade widgets.
-        DataBase.create_widget_database(self.builder.get_objects())
+        # DataBase.create_widget_database(self.builder.get_objects())
+
+        # Add tags from the current window to the RAM database
+        DataBase.create_tag_database(self.builder.get_objects(), window_name)
 
         # Link window to the windows handler
         self.builder.connect_signals(handler)
@@ -53,11 +56,12 @@ class Window(Gtk.Window, GObject.GObject):
         # DataBase.refresh_tag_database()
         for each_tag in DataBase.tags:
             try:
-                if DataBase.tags[each_tag]['__type'] == 'label':
+                if DataBase.tags[each_tag]['_type'] == 'label':
                     widget = self.builder.get_object(each_tag)
                     tag = DataBase.get_value(str(each_tag))
                     widget.set_label(str(tag))
             except:
-                print(each_tag + str(" not found."))
+                pass
+                # print(each_tag + str(" not found durring window refresh."))
 
         return True

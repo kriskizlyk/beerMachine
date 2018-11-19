@@ -11,22 +11,21 @@ import threading
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 VIEWS_DIR = os.path.join(BASE_DIR, 'views')
 
-class SettingsHandler():
-    def close(self, *args):
-        DataBase.settings_widgets['settings'].destroy()
-
-    def set_label(self, label, button):
-        Keyboard(label)
-
 class Settings(Window):
     def __init__(self):
         Window.__init__(self, 'settings', SettingsHandler())
         print("Creating Settings Window...")
+        self.y = 'piss'
+        # self.x = self.builder.get_object("date_time")
+        # x.set_label(str("holy hell"))
+        # DataBase.set_value("date_time", time.strftime("%H:%M"))
 
-        # Add a Label Update using the built in GObject Thread.
-        GObject.timeout_add(100, self.label_refresh)
-
-    def label_refresh(self):
-        DataBase.set_value("date_time", time.strftime("%H:%M"))
-        DataBase.refresh_tag_database()
-        return True
+class SettingsHandler(Settings):
+    def close(self, *args):
+        pass
+        # x = self.builder.get_object('settings')
+        # x.destroy()
+        # DataBase.settings_widgets['settings'].destroy()
+    def set_label(self, *args):
+        x = self.builder.get_object("time_test")
+        x.set_label(str("holy hell"))
