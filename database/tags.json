@@ -1,4 +1,10 @@
 {
+ "h_datetime": {
+  "_read": 0,
+  "_redraw": false,
+  "_write": 0,
+  "value": "20:47"
+ },
  "h_door_switch": {
   "_read": 0,
   "_redraw": false,
@@ -21,21 +27,51 @@
   "_read": 0,
   "_redraw": false,
   "_write": 0,
-  "value": "####"
+  "value": "20181119"
  },
  "h_scale_1_brewer": {
   "_read": 0,
   "_redraw": false,
   "_write": 0,
-  "value": "####"
+  "value": "Urquelle"
+ },
+ "h_scale_1_brewstyle": {
+  "_read": 0,
+  "_redraw": false,
+  "_write": 0,
+  "value": "Pilsner"
+ },
+ "h_scale_1_decimal": {
+  "_read": 0,
+  "_redraw": false,
+  "_write": 0,
+  "value": "2"
+ },
+ "h_scale_1_grads": {
+  "_read": 0,
+  "_redraw": false,
+  "_write": 0,
+  "value": "5"
  },
  "h_scale_1_name": {
   "_read": 0,
   "_redraw": false,
   "_write": 0,
-  "value": "####"
+  "value": "Pilsner"
  },
  "h_scale_1_style": {
+  "_read": 0,
+  "_redraw": false,
+  "_write": 0,
+  "value": "####"
+ },
+ "h_scale_1_tare": {
+  "_read": 0,
+  "_redraw": false,
+  "_write": 0,
+  "value": "####"
+ },
+ "h_scale_1_zero": {
   "_read": 0,
   "_redraw": false,
   "_write": 0,
@@ -54,6 +90,12 @@
   "value": "####"
  },
  "h_scale_2_brewer": {
+  "_read": 0,
+  "_redraw": false,
+  "_write": 0,
+  "value": "####"
+ },
+ "h_scale_2_brewstyle": {
   "_read": 0,
   "_redraw": false,
   "_write": 0,
@@ -89,6 +131,12 @@
   "_write": 0,
   "value": "####"
  },
+ "h_scale_3_brewstyle": {
+  "_read": 0,
+  "_redraw": false,
+  "_write": 0,
+  "value": "####"
+ },
  "h_scale_3_name": {
   "_read": 0,
   "_redraw": false,
@@ -114,6 +162,12 @@
   "value": "####"
  },
  "h_scale_4_brewer": {
+  "_read": 0,
+  "_redraw": false,
+  "_write": 0,
+  "value": "####"
+ },
+ "h_scale_4_brewstyle": {
   "_read": 0,
   "_redraw": false,
   "_write": 0,

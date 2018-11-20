@@ -72,8 +72,8 @@
                 <property name="can_focus">False</property>
                 <property name="orientation">vertical</property>
                 <child>
-                  <object class="GtkLabel" id="date_time">
-                    <property name="name">date_time</property>
+                  <object class="GtkLabel" id="h_datetime">
+                    <property name="name">h_datetime</property>
                     <property name="visible">True</property>
                     <property name="can_focus">False</property>
                     <property name="double_buffered">False</property>

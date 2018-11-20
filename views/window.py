@@ -41,15 +41,15 @@ class Window(Gtk.Window, GObject.GObject):
         self.window = self.builder.get_object(self.window_name)
 
         # Immediatly updates all the labels from the Tag Database.
-        self.update_widget_label()
+        self.update_labels()
 
         # Add a Label Update using the built in GObject Thread.
-        GObject.timeout_add(1000, self.update_widget_label)
+        GObject.timeout_add(1000, self.update_labels)
 
         # Show the window.make
         self.window.show_all()
 
-    def update_widget_label(self):
+    def update_labels(self):
         ''' Function takes the RAM database and push it out to file.'''
         ''' All label widgets are updated on the screen. '''
 
@@ -58,16 +58,29 @@ class Window(Gtk.Window, GObject.GObject):
 
         # Send all current tags to database to be saved.
         DataBase.refresh_tag_database()
+        DataBase.set_value('h_datetime', time.strftime("%H:%M"))
+
+        for each_widget in self.builder.get_objects():
+            try:
+                if type(each_widget) == Gtk.Label:
+                    if (each_widget.get_name() in DataBase.tags):
+                        tagname = str(each_widget.get_name())
+                        value = DataBase.get_value(tagname)
+                        each_widget.set_label(str(value))
+                        # print(tagname + str(value))
+
+            except:
+                print(each_widget.get_name() + str(" not found durring window refresh."))
 
         # Update all Widget Labels on the HMI.
-        for each_tag in DataBase.tags:
-            try:
-                widget = self.builder.get_object(each_tag)
-                tag = DataBase.get_value(str(each_tag))
-                widget.set_label(str(tag))
-            except:
+        # for each_tag in DataBase.tags:
+        #     try:
+        #         widget = self.builder.get_object(each_tag)
+        #         tag = DataBase.get_value(str(each_tag))
+        #         widget.set_label(str(tag))
+        #     except:
                 # pass
-                print(each_tag + str(" not found durring window refresh."))
+
 
         # print(self.window_name + " Tags updated: {:.3f} ms.".format((time.clock() - self.start_time)*1000))
         return True
