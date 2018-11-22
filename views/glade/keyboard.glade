@@ -26,34 +26,34 @@
         <property name="orientation">vertical</property>
         <child>
           <object class="GtkBox" id="top_bar">
-            <property name="height_request">175</property>
+            <property name="height_request">200</property>
             <property name="visible">True</property>
             <property name="can_focus">False</property>
             <child>
-              <object class="GtkBox" id="exit_widget">
+              <object class="GtkBox" id="clear_widget">
                 <property name="width_request">190</property>
                 <property name="visible">True</property>
                 <property name="can_focus">False</property>
                 <property name="orientation">vertical</property>
-                <signal name="button-release-event" handler="close" object="keyboard" swapped="no"/>
                 <child>
-                  <object class="GtkLabel" id="exit_icon">
+                  <object class="GtkLabel" id="clear_icon">
                     <property name="visible">True</property>
                     <property name="can_focus">False</property>
                     <property name="selectable">True</property>
+                    <signal name="button-release-event" handler="push_clear" swapped="no"/>
                     <style>
-                      <class name="exit_back"/>
+                      <class name="clear_back"/>
                       <class name="icon"/>
                     </style>
                   </object>
                   <packing>
                     <property name="expand">True</property>
                     <property name="fill">True</property>
-                    <property name="position">0</property>
+                    <property name="position">1</property>
                   </packing>
                 </child>
                 <style>
-                  <class name="r_back"/>
+                  <class name="b_back"/>
                 </style>
               </object>
               <packing>
@@ -77,39 +77,6 @@
                 <property name="expand">True</property>
                 <property name="fill">True</property>
                 <property name="position">1</property>
-              </packing>
-            </child>
-            <child>
-              <object class="GtkBox" id="clear_widget">
-                <property name="width_request">190</property>
-                <property name="visible">True</property>
-                <property name="can_focus">False</property>
-                <property name="orientation">vertical</property>
-                <child>
-                  <object class="GtkLabel" id="clear_icon">
-                    <property name="visible">True</property>
-                    <property name="can_focus">False</property>
-                    <property name="selectable">True</property>
-                    <signal name="button-release-event" handler="push_clear" swapped="no"/>
-                    <style>
-                      <class name="clear_back"/>
-                      <class name="icon"/>
-                    </style>
-                  </object>
-                  <packing>
-                    <property name="expand">True</property>
-                    <property name="fill">True</property>
-                    <property name="position">0</property>
-                  </packing>
-                </child>
-                <style>
-                  <class name="b_back"/>
-                </style>
-              </object>
-              <packing>
-                <property name="expand">False</property>
-                <property name="fill">True</property>
-                <property name="position">2</property>
               </packing>
             </child>
             <child>
@@ -137,6 +104,39 @@
                 </child>
                 <style>
                   <class name="b_back"/>
+                </style>
+              </object>
+              <packing>
+                <property name="expand">False</property>
+                <property name="fill">True</property>
+                <property name="position">2</property>
+              </packing>
+            </child>
+            <child>
+              <object class="GtkBox" id="exit_widget">
+                <property name="width_request">190</property>
+                <property name="visible">True</property>
+                <property name="can_focus">False</property>
+                <property name="orientation">vertical</property>
+                <signal name="button-release-event" handler="close" object="keyboard" swapped="no"/>
+                <child>
+                  <object class="GtkLabel" id="exit_icon">
+                    <property name="visible">True</property>
+                    <property name="can_focus">False</property>
+                    <property name="selectable">True</property>
+                    <style>
+                      <class name="exit_back"/>
+                      <class name="icon"/>
+                    </style>
+                  </object>
+                  <packing>
+                    <property name="expand">True</property>
+                    <property name="fill">True</property>
+                    <property name="position">-1</property>
+                  </packing>
+                </child>
+                <style>
+                  <class name="r_back"/>
                 </style>
               </object>
               <packing>
@@ -174,7 +174,7 @@
                 </style>
               </object>
               <packing>
-                <property name="left_attach">0</property>
+                <property name="left_attach">9</property>
                 <property name="top_attach">0</property>
               </packing>
             </child>
@@ -195,7 +195,7 @@
                 </style>
               </object>
               <packing>
-                <property name="left_attach">1</property>
+                <property name="left_attach">0</property>
                 <property name="top_attach">0</property>
               </packing>
             </child>
@@ -216,7 +216,7 @@
                 </style>
               </object>
               <packing>
-                <property name="left_attach">2</property>
+                <property name="left_attach">1</property>
                 <property name="top_attach">0</property>
               </packing>
             </child>
@@ -237,7 +237,7 @@
                 </style>
               </object>
               <packing>
-                <property name="left_attach">4</property>
+                <property name="left_attach">3</property>
                 <property name="top_attach">0</property>
               </packing>
             </child>
@@ -258,7 +258,7 @@
                 </style>
               </object>
               <packing>
-                <property name="left_attach">3</property>
+                <property name="left_attach">2</property>
                 <property name="top_attach">0</property>
               </packing>
             </child>
@@ -279,7 +279,7 @@
                 </style>
               </object>
               <packing>
-                <property name="left_attach">5</property>
+                <property name="left_attach">4</property>
                 <property name="top_attach">0</property>
               </packing>
             </child>
@@ -300,7 +300,7 @@
                 </style>
               </object>
               <packing>
-                <property name="left_attach">6</property>
+                <property name="left_attach">5</property>
                 <property name="top_attach">0</property>
               </packing>
             </child>
@@ -321,7 +321,7 @@
                 </style>
               </object>
               <packing>
-                <property name="left_attach">7</property>
+                <property name="left_attach">6</property>
                 <property name="top_attach">0</property>
               </packing>
             </child>
@@ -342,7 +342,7 @@
                 </style>
               </object>
               <packing>
-                <property name="left_attach">8</property>
+                <property name="left_attach">7</property>
                 <property name="top_attach">0</property>
               </packing>
             </child>
@@ -363,7 +363,7 @@
                 </style>
               </object>
               <packing>
-                <property name="left_attach">9</property>
+                <property name="left_attach">8</property>
                 <property name="top_attach">0</property>
               </packing>
             </child>
@@ -1008,7 +1008,6 @@
             <child>
               <object class="GtkBox" id="enter_widget">
                 <property name="width_request">190</property>
-                <property name="height_request">180</property>
                 <property name="visible">True</property>
                 <property name="can_focus">False</property>
                 <property name="orientation">vertical</property>
@@ -1043,7 +1042,6 @@
             <child>
               <object class="GtkBox" id="spacebar_widget">
                 <property name="width_request">190</property>
-                <property name="height_request">180</property>
                 <property name="visible">True</property>
                 <property name="can_focus">False</property>
                 <property name="orientation">vertical</property>
@@ -1076,7 +1074,6 @@
             <child>
               <object class="GtkBox" id="shift_widget">
                 <property name="width_request">190</property>
-                <property name="height_request">180</property>
                 <property name="visible">True</property>
                 <property name="can_focus">False</property>
                 <property name="orientation">vertical</property>
@@ -1085,7 +1082,7 @@
                     <property name="visible">True</property>
                     <property name="can_focus">False</property>
                     <property name="selectable">True</property>
-                    <signal name="button-release-event" handler="push_space" swapped="no"/>
+                    <signal name="button-release-event" handler="enable_shift" swapped="no"/>
                     <style>
                       <class name="shift_back"/>
                       <class name="icon"/>

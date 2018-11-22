@@ -3,7 +3,7 @@
   "_read": 0,
   "_redraw": false,
   "_write": 0,
-  "value": "20:47"
+  "value": "22:45"
  },
  "h_door_switch": {
   "_read": 0,
@@ -33,7 +33,7 @@
   "_read": 0,
   "_redraw": false,
   "_write": 0,
-  "value": "Urquelle"
+  "value": "Kris"
  },
  "h_scale_1_brewstyle": {
   "_read": 0,
@@ -83,31 +83,61 @@
   "_write": 0,
   "value": "####"
  },
+ "h_scale_2_address": {
+  "_read": 0,
+  "_redraw": false,
+  "_write": 0,
+  "value": "10"
+ },
  "h_scale_2_brewdate": {
   "_read": 0,
   "_redraw": false,
   "_write": 0,
-  "value": "####"
+  "value": "20181120"
  },
  "h_scale_2_brewer": {
   "_read": 0,
   "_redraw": false,
   "_write": 0,
-  "value": "####"
+  "value": "Jaime"
  },
  "h_scale_2_brewstyle": {
   "_read": 0,
   "_redraw": false,
   "_write": 0,
-  "value": "####"
+  "value": "IPA"
+ },
+ "h_scale_2_decimal": {
+  "_read": 0,
+  "_redraw": false,
+  "_write": 0,
+  "value": "2"
+ },
+ "h_scale_2_grads": {
+  "_read": 0,
+  "_redraw": false,
+  "_write": 0,
+  "value": "5"
  },
  "h_scale_2_name": {
   "_read": 0,
   "_redraw": false,
   "_write": 0,
-  "value": "####"
+  "value": "IPA"
  },
  "h_scale_2_style": {
+  "_read": 0,
+  "_redraw": false,
+  "_write": 0,
+  "value": "####"
+ },
+ "h_scale_2_tare": {
+  "_read": 0,
+  "_redraw": false,
+  "_write": 0,
+  "value": "####"
+ },
+ "h_scale_2_zero": {
   "_read": 0,
   "_redraw": false,
   "_write": 0,
@@ -196,6 +226,36 @@
   "_redraw": false,
   "_write": 0,
   "value": 8
+ },
+ "h_scale_co2_decimal": {
+  "_read": 0,
+  "_redraw": false,
+  "_write": 0,
+  "value": "2"
+ },
+ "h_scale_co2_grads": {
+  "_read": 0,
+  "_redraw": false,
+  "_write": 0,
+  "value": "5"
+ },
+ "h_scale_co2_name": {
+  "_read": 0,
+  "_redraw": false,
+  "_write": 0,
+  "value": "CO2"
+ },
+ "h_scale_co2_tare": {
+  "_read": 0,
+  "_redraw": false,
+  "_write": 0,
+  "value": "####"
+ },
+ "h_scale_co2_zero": {
+  "_read": 0,
+  "_redraw": false,
+  "_write": 0,
+  "value": "####"
  },
  "h_temperature": {
   "_read": 0,
