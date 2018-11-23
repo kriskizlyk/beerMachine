@@ -12,6 +12,7 @@ class TemperatureSensor():
     def __init__(self):
         self.update_seconds = 1
         self.h_temperature = 'h_temperature'
+        self.h_temp_decimal = 'h_temp_decimal'
 
         self.read_sensor_timer = TimerEvent(self.update_seconds, self.read_sensor)
         self.read_sensor_timer.start()
@@ -28,7 +29,7 @@ class TemperatureSensor():
         try:
             sensor = W1ThermSensor()
             temp = sensor.get_temperature()
-            temp = '{0:.1f}'.format(temp)
+            temp = '{0:.' + str(self.h_temp_decimal) +'f}'.format(temp)
             DataBase.set_value(self.h_temperature, temp)
         except:
             self.read_sensor_timer.error()

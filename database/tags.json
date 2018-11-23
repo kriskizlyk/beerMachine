@@ -3,7 +3,7 @@
   "_read": 0,
   "_redraw": false,
   "_write": 0,
-  "value": "22:45"
+  "value": "11:30"
  },
  "h_door_switch": {
   "_read": 0,
@@ -256,6 +256,12 @@
   "_redraw": false,
   "_write": 0,
   "value": "####"
+ },
+ "h_temp_decimal": {
+  "_read": 0,
+  "_redraw": false,
+  "_write": 0,
+  "value": "1"
  },
  "h_temperature": {
   "_read": 0,
