@@ -7,7 +7,7 @@ class TimerEvent():
         self.hFunction = hFunction
         self.timed_out = False
         self._error_flag = False
-        self.retry = 1
+        self.retry = 100
         self.status = True
 
     def handle_function(self):
@@ -15,7 +15,7 @@ class TimerEvent():
 
         # Timer did not catch an error, reset timeout count.
         if (self._error_flag == False):
-            self.retry = 1
+            self.retry = 100
         else:
             self._error_flag = False
 

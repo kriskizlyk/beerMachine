@@ -80,7 +80,7 @@ class Scale():
 
         except:
             self.read_scale_timer.error()
-            print('Command Read: Scale ' + str(self.scale_number) + ' command ' + str(cmd) + ' timed out.')
+            #print('Command Read: Scale ' + str(self.scale_number) + ' command ' + str(cmd) + ' timed out.')
 
         self.busy = False
 
@@ -102,7 +102,7 @@ class Scale():
 
         except:
             self.read_scale_timer.error()
-            print('Command Read: Scale ' + str(self.scale_number) + ' command ' + str(cmd) + ' timed out.')
+            #print('Command Read: Scale ' + str(self.scale_number) + ' command ' + str(cmd) + ' timed out.')
             result = False
 
         self.busy = False
