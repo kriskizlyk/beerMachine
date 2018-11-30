@@ -16,7 +16,7 @@ class TemperatureSensor():
         self.filtered = 0.0
         self.filtered_previous = 0.0
         self.new_output = 0.0
-        self.filter_k = 0.1
+        self.filter_k = 0.35
 
         self.read_sensor_timer = TimerEvent(self.update_seconds, self.read_sensor)
         self.read_sensor_timer.start()

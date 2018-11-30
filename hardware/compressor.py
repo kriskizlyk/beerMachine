@@ -50,12 +50,12 @@ class Compressor:
 
         #if not (self.state == self.last_state):
         if (self.run == 1):
-            print("Compressor stopped.")
+            #print("Compressor stopped.")
             DataBase.set_value('h_door_switch', 'stopped')            
             GPIO.output(self.pin_number, 0)
                     
         else:
-            print("Compressor running.")
+            #print("Compressor running.")
             DataBase.set_value('h_door_switch', 'running')            
             GPIO.output(self.pin_number, 1)
 

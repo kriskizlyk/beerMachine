@@ -31,7 +31,7 @@ class TimerEvent():
         self.thread.start()
 
     def error(self):
-        self.retry = self.retry - 1
+        #self.retry = self.retry - 1
         self._error_flag = True
         if (self.retry < 1):
             self.timed_out = True

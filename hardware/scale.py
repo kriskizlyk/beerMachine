@@ -62,9 +62,10 @@ class Scale():
         self.busy = True
         bytes_to_read = 1
         command = [pack('>B', cmd), pack('>I', value)]
-
+        
         try:
             with SMBusWrapper(1) as bus:
+                
                 write = i2c_msg.write(self.address, command)
                     # Have to get rid of the last byte on...smbus2 messes with the last word, not am sure why.
                 read = i2c_msg.read(self.address, bytes_to_read + 1)
@@ -80,7 +81,7 @@ class Scale():
 
         except:
             self.read_scale_timer.error()
-            #print('Command Read: Scale ' + str(self.scale_number) + ' command ' + str(cmd) + ' timed out.')
+            print('Command Read: Scale ' + str(self.scale_number) + ' command ' + str(cmd) + ' timed out.')
 
         self.busy = False
 
@@ -102,7 +103,7 @@ class Scale():
 
         except:
             self.read_scale_timer.error()
-            #print('Command Read: Scale ' + str(self.scale_number) + ' command ' + str(cmd) + ' timed out.')
+            print('Command Read: Scale ' + str(self.scale_number) + ' command ' + str(cmd) + ' timed out.')
             result = False
 
         self.busy = False
