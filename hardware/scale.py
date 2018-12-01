@@ -8,7 +8,13 @@ from decimal import Decimal
 class Scale():
 
     def __init__(self, scale_number, address):
-        self.address = str(address)
+        if (address == 8):
+            self.address = 0x08
+        elif (address == 9):
+            self.address = 0x09
+        elif (address == 10):
+            self.address = 0x10
+        
         self.scale_number = str(scale_number)
 
         self.h_scale_address = 'h_scale_' + self.scale_number + '_address'
@@ -25,7 +31,7 @@ class Scale():
         self.h_scale_style = 'h_scale_' + self.scale_number + '_brewstyle'
 
         self.busy = False
-        self.update_seconds = 0.1
+        self.update_seconds = 1
         self.start_timers()
 
         print("Scale " + str(self.scale_number) + " created.")
@@ -89,7 +95,8 @@ class Scale():
         self.busy = True
         bytes_to_read = 4
         command = pack('>B', cmd)
-
+        
+        #if True:
         try:
             with SMBusWrapper(1) as bus:
                 write = i2c_msg.write(self.address, command)
@@ -111,25 +118,29 @@ class Scale():
 
     def _update_weight(self):
         data = self._get_command(10)
+        
+        data = data - 320073
+        
         if (data == False):
             pass
 
         else:
             if (data < 0):
                 data = 0.0
-                DataBase.set_value(self.h_tap_capacity, result)
+                DataBase.set_value(self.h_scale_actual, data)
 
-            elif (result > 100000):
-                print('Scale ' + self.scale_number + ' update out of bounding.')
+            elif (data > 100000):
+                print('Scale ' + self.scale_number + ' update out of bounding.  ' + str(data) )
 
             else:
-                decimal = DataBase.get_value(self.h_scale_dec)
-                result = '{0:.3f}'.format(result / pow(10, decimal))
+                decimal = 3#DataBase.get_value(self.h_scale_dec)
+                result = '{0:.3f}'.format(data / pow(10, decimal))
                 DataBase.set_value(self.h_scale_actual, result)
 
         if (self.read_scale_timer.get_status() == False):
             print('Scale ' + self.scale_number + ' has timed out, manually reconnect.')
 
+        print(data)
     # def read_scale(self):
     #     self.busy = True
     #     address = 0x08

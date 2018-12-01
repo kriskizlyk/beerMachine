@@ -3,7 +3,7 @@
   "_read": 0,
   "_redraw": false,
   "_write": 0,
-  "value": "18:04"
+  "value": "13:31"
  },
  "h_door_switch": {
   "_read": 0,
@@ -21,7 +21,7 @@
   "_read": 0,
   "_redraw": false,
   "_write": 0,
-  "value": "####"
+  "value": "17.104"
  },
  "h_scale_1_address": {
   "_read": 0,
@@ -225,7 +225,7 @@
   "_read": 0,
   "_redraw": false,
   "_write": 0,
-  "value": "####"
+  "value": 0.0
  },
  "h_scale_co2_address": {
   "_read": 0,
@@ -273,7 +273,7 @@
   "_read": 0,
   "_redraw": false,
   "_write": 0,
-  "value": "4.9"
+  "value": "5.5"
  },
  "h_username": {
   "_read": 0,
