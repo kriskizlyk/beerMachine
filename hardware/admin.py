@@ -6,14 +6,14 @@ import RPi.GPIO as GPIO
 
 class Hardware():
     def __init__(self):
-        #self.scale_co2 = Scale('co2', 8)
+        self.scale_co2 = Scale('co2', 8)
         self.scale_1 = Scale('1', 9)
         self.temp_sensor = TemperatureSensor()
         self.door_switch = DoorSwitch(5, 'i')
         self.compressor = Compressor(27, 'o')
 
         self.hardware = [
-            #self.scale_co2,
+            self.scale_co2,
             self.scale_1,
             self.temp_sensor,
             self.door_switch,

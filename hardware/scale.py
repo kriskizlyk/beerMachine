@@ -119,7 +119,17 @@ class Scale():
     def _update_weight(self):
         data = self._get_command(10)
         
-        data = data - 320073
+        if (self.scale_number == '1'):
+            data = data - 320073
+        
+        elif (self.scale_number == '2'):
+            data = data - 310000
+        
+        elif (self.scale_number == 'co2'):
+            data = data - 310000
+        
+        else:
+            print('Scale ' + self.scale_number + ' data: ' + str(data) + '.')
         
         if (data == False):
             pass
@@ -133,14 +143,16 @@ class Scale():
                 print('Scale ' + self.scale_number + ' update out of bounding.  ' + str(data) )
 
             else:
-                decimal = 3#DataBase.get_value(self.h_scale_dec)
-                result = '{0:.3f}'.format(data / pow(10, decimal))
-                DataBase.set_value(self.h_scale_actual, result)
+                decimal = DataBase.get_value(self.h_scale_dec)
+                result = '{0:.3f}'.format(data / pow(10, 3))
+                truncated_result = result[0:(result.find('.') + 1 + int(decimal))]
+                DataBase.set_value(self.h_scale_actual, truncated_result)
+                #print('Scale ' + self.scale_number + ' weight: ' + result + ' kgs.')                
 
         if (self.read_scale_timer.get_status() == False):
             print('Scale ' + self.scale_number + ' has timed out, manually reconnect.')
 
-        print(data)
+
     # def read_scale(self):
     #     self.busy = True
     #     address = 0x08

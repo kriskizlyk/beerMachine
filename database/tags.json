@@ -3,13 +3,13 @@
   "_read": 0,
   "_redraw": false,
   "_write": 0,
-  "value": "13:31"
+  "value": "14:00"
  },
  "h_door_switch": {
   "_read": 0,
   "_redraw": false,
   "_write": 0,
-  "value": "running"
+  "value": "STOPPED"
  },
  "h_door_switch_2": {
   "_read": 0,
@@ -21,7 +21,7 @@
   "_read": 0,
   "_redraw": false,
   "_write": 0,
-  "value": "17.104"
+  "value": "14.13"
  },
  "h_scale_1_address": {
   "_read": 0,
@@ -63,7 +63,7 @@
   "_read": 0,
   "_redraw": false,
   "_write": 0,
-  "value": "Pilsner"
+  "value": "Urkel"
  },
  "h_scale_1_style": {
   "_read": 0,
@@ -87,13 +87,13 @@
   "_read": 0,
   "_redraw": false,
   "_write": 0,
-  "value": "####"
+  "value": "9.991"
  },
  "h_scale_2_address": {
   "_read": 0,
   "_redraw": false,
   "_write": 0,
-  "value": "10"
+  "value": 8
  },
  "h_scale_2_brewdate": {
   "_read": 0,
@@ -105,13 +105,13 @@
   "_read": 0,
   "_redraw": false,
   "_write": 0,
-  "value": "Jaime"
+  "value": "Kris"
  },
  "h_scale_2_brewstyle": {
   "_read": 0,
   "_redraw": false,
   "_write": 0,
-  "value": "IPA"
+  "value": "Cider"
  },
  "h_scale_2_decimal": {
   "_read": 0,
@@ -129,7 +129,7 @@
   "_read": 0,
   "_redraw": false,
   "_write": 0,
-  "value": "IPA"
+  "value": "Raspberry Cider"
  },
  "h_scale_2_style": {
   "_read": 0,
@@ -225,7 +225,7 @@
   "_read": 0,
   "_redraw": false,
   "_write": 0,
-  "value": 0.0
+  "value": "9.9"
  },
  "h_scale_co2_address": {
   "_read": 0,
@@ -237,7 +237,7 @@
   "_read": 0,
   "_redraw": false,
   "_write": 0,
-  "value": "2"
+  "value": "1"
  },
  "h_scale_co2_grads": {
   "_read": 0,
@@ -273,7 +273,7 @@
   "_read": 0,
   "_redraw": false,
   "_write": 0,
-  "value": "5.5"
+  "value": "1.7"
  },
  "h_username": {
   "_read": 0,

@@ -8,7 +8,7 @@ $(MAIN_FILE_NAME): clear run
 
 run:
 	@echo Running Python file.
-	python3 $(MAIN_FILE_NAME)
+	python3 "$(MAIN_FILE_NAME)"
 	@echo
 
 clean:

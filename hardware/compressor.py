@@ -41,27 +41,17 @@ class Compressor:
         
         #try:
         if (temp > 8.0):
-            self.run = 1
-            self.state = 1
+            DataBase.set_value('h_door_switch', 'RUNNING')            
+            GPIO.output(self.pin_number, 1)            
+
             
         elif (temp < 6.0):
-            self.run = 0
-            self.state = 0
-
-        #if not (self.state == self.last_state):
-        if (self.run == 1):
-            #print("Compressor stopped.")
-            DataBase.set_value('h_door_switch', 'stopped')            
+            DataBase.set_value('h_door_switch', 'STOPPED')            
             GPIO.output(self.pin_number, 0)
-                    
+            
         else:
-            #print("Compressor running.")
-            DataBase.set_value('h_door_switch', 'running')            
-            GPIO.output(self.pin_number, 1)
+            pass       
 
-        
-
-        self.last_state = self.state
         self.busy = False
 
     def stop_timers(self):
