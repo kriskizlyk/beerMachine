@@ -35,19 +35,18 @@ class TemperatureSensor():
             self.new_input = sensor.get_temperature()
             self.filtered = ((1.0 - self.filter_k) * self.filtered_previous) + (self.filter_k * self.new_input)
             self.filtered_previous = self.filtered
-        
+
             #temp = '{0:.' + str(self.h_temp_decimal) +'f}'.format(temp)
             temp = '{0:.1f}'.format(self.filtered)
-        
+
             DataBase.set_value(self.h_temperature, temp)
-            
-        except:
+
+        except Exception as e:
             self.read_sensor_timer.error()
-            print("Temperature Sensor reading failed.")
+            print("Temperature Sensor reading failed. " + str(e) + '.')
 
         self.busy = False
 
     def stop_timers(self):
         print("Stopping temperature sensor read event.")
         self.read_sensor_timer.cancel()
-

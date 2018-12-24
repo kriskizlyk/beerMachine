@@ -2,7 +2,10 @@ from hardware.scale import Scale
 from hardware.temperature import TemperatureSensor
 from hardware.doorswitch import DoorSwitch
 from hardware.compressor import Compressor
-import RPi.GPIO as GPIO
+try:
+    import RPi.GPIO as GPIO
+except:
+    print("***WARNING*** Raspberry GPIO not loaded since this is not a RaspberryPi.")
 
 class Hardware():
     def __init__(self):
@@ -26,8 +29,11 @@ class Hardware():
         # services may not shut off in between reads.  Should use a proper
         # scheduler to see if the hanlder is busy or not.
 
-        GPIO.cleanup()
-        
+        try:
+            GPIO.cleanup()
+        except:
+            print("***WARNING*** Raspberry GPIO not cleaned since this is not a RaspberryPi.")
+
         while len(self.hardware) >= 1:
             for each_service in self.hardware:
                 if (each_service.is_busy() == False):

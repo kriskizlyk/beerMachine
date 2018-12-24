@@ -14,21 +14,24 @@ class Scale():
             self.address = 0x09
         elif (address == 10):
             self.address = 0x10
-        
-        self.scale_number = str(scale_number)
 
+        self.scale_number = str(scale_number)
         self.h_scale_address = 'h_scale_' + self.scale_number + '_address'
         DataBase.set_value(self.h_scale_address, address)
+
         self.h_scale_name = 'h_scale_' + self.scale_number + '_name'
-        self.h_scale_actual = 'h_scale_' + self.scale_number + '_actual'
-        self.h_scale_dec = 'h_scale_' + self.scale_number + '_decimal'
-        self.h_scale_grads = 'h_scale_' + self.scale_number + '_grads'
-        self.h_scale_max = 'h_scale_' + self.scale_number + '_max'
-        self.h_scale_max = 'h_scale_' + self.scale_number + '_zero'
-        self.h_scale_max = 'h_scale_' + self.scale_number + '_tare'
         self.h_scale_style = 'h_scale_' + self.scale_number + '_style'
-        self.h_scale_style = 'h_scale_' + self.scale_number + '_brewdate'
-        self.h_scale_style = 'h_scale_' + self.scale_number + '_brewstyle'
+        self.h_scale_brewdate = 'h_scale_' + self.scale_number + '_brewdate'
+        self.h_scale_brewstyle = 'h_scale_' + self.scale_number + '_brewstyle'
+        self.h_scale_actual = 'h_scale_' + self.scale_number + '_actual'
+        self.h_scale_raw_actual = 'h_scale_' + self.scale_number + '_raw_actual'
+        self.h_scale_tare = 'h_scale_' + self.scale_number + '_tare'
+        self.h_scale_raw_tare = 'h_scale_' + self.scale_number + '_raw_tare'
+        self.h_scale_zero = 'h_scale_' + self.scale_number + '_zero'
+        self.h_scale_raw_zero = 'h_scale_' + self.scale_number + '_raw_zero'
+        self.h_scale_span = 'h_scale_' + self.scale_number + '_span'
+        self.h_scale_raw_span = 'h_scale_' + self.scale_number + '_raw_span'
+        self.h_scale_decimal = 'h_scale_' + self.scale_number + '_decimal'
 
         self.busy = False
         self.update_seconds = 1
@@ -68,10 +71,10 @@ class Scale():
         self.busy = True
         bytes_to_read = 1
         command = [pack('>B', cmd), pack('>I', value)]
-        
+
         try:
             with SMBusWrapper(1) as bus:
-                
+
                 write = i2c_msg.write(self.address, command)
                     # Have to get rid of the last byte on...smbus2 messes with the last word, not am sure why.
                 read = i2c_msg.read(self.address, bytes_to_read + 1)
@@ -95,7 +98,7 @@ class Scale():
         self.busy = True
         bytes_to_read = 4
         command = pack('>B', cmd)
-        
+
         #if True:
         try:
             with SMBusWrapper(1) as bus:
@@ -117,37 +120,25 @@ class Scale():
         return result
 
     def _update_weight(self):
-        data = self._get_command(10)
-        
-        if (self.scale_number == '1'):
-            data = data - 320073
-        
-        elif (self.scale_number == '2'):
-            data = data - 310000
-        
-        elif (self.scale_number == 'co2'):
-            data = data - 310000
-        
-        else:
-            print('Scale ' + self.scale_number + ' data: ' + str(data) + '.')
-        
-        if (data == False):
+        x = self._get_command(10)
+
+        if (x == False):
             pass
 
         else:
-            if (data < 0):
-                data = 0.0
-                DataBase.set_value(self.h_scale_actual, data)
+            DataBase.set_value(self.h_scale_raw_actual, str(x))
+            y1 = int(DataBase.get_value(self.h_scale_span))
+            y2 = int(DataBase.get_value(self.h_scale_zero))
+            x1 = int(DataBase.get_value(self.h_scale_raw_span))
+            x2 = int(DataBase.get_value(self.h_scale_raw_zero))
+            m = (y1 - y2) / (x1 - x2)
+            b = x1 - (m * y1)
+            y = (m * x) + b
 
-            elif (data > 100000):
-                print('Scale ' + self.scale_number + ' update out of bounding.  ' + str(data) )
-
-            else:
-                decimal = DataBase.get_value(self.h_scale_dec)
-                result = '{0:.3f}'.format(data / pow(10, 3))
-                truncated_result = result[0:(result.find('.') + 1 + int(decimal))]
-                DataBase.set_value(self.h_scale_actual, truncated_result)
-                #print('Scale ' + self.scale_number + ' weight: ' + result + ' kgs.')                
+            decimal = DataBase.get_value(self.h_scale_decimal)
+            result = '{0:.3f}'.format(y / pow(10, 3))
+            truncated_result = result[0:(result.find('.') + 1 + int(decimal))]
+            DataBase.set_value(self.h_scale_actual, truncated_result)
 
         if (self.read_scale_timer.get_status() == False):
             print('Scale ' + self.scale_number + ' has timed out, manually reconnect.')

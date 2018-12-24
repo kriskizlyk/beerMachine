@@ -3,7 +3,7 @@
   "_read": 0,
   "_redraw": false,
   "_write": 0,
-  "value": "14:12"
+  "value": "15:32"
  },
  "h_door_switch": {
   "_read": 0,
@@ -21,7 +21,7 @@
   "_read": 0,
   "_redraw": false,
   "_write": 0,
-  "value": "14.14"
+  "value": 0.0
  },
  "h_scale_1_address": {
   "_read": 0,
@@ -65,6 +65,36 @@
   "_write": 0,
   "value": "Urkel"
  },
+ "h_scale_1_raw_actual": {
+  "_read": 0,
+  "_redraw": false,
+  "_write": 0,
+  "value": "325000"
+ },
+ "h_scale_1_raw_span": {
+  "_read": 0,
+  "_redraw": false,
+  "_write": 0,
+  "value": "331200"
+ },
+ "h_scale_1_raw_tare": {
+  "_read": 0,
+  "_redraw": false,
+  "_write": 0,
+  "value": "324000"
+ },
+ "h_scale_1_raw_zero": {
+  "_read": 0,
+  "_redraw": false,
+  "_write": 0,
+  "value": "321000"
+ },
+ "h_scale_1_span": {
+  "_read": 0,
+  "_redraw": false,
+  "_write": 0,
+  "value": "20000"
+ },
  "h_scale_1_style": {
   "_read": 0,
   "_redraw": false,
@@ -75,13 +105,13 @@
   "_read": 0,
   "_redraw": false,
   "_write": 0,
-  "value": "####"
+  "value": "0"
  },
  "h_scale_1_zero": {
   "_read": 0,
   "_redraw": false,
   "_write": 0,
-  "value": "####"
+  "value": "0"
  },
  "h_scale_2_actual": {
   "_read": 0,
@@ -225,7 +255,7 @@
   "_read": 0,
   "_redraw": false,
   "_write": 0,
-  "value": "9.9"
+  "value": 0.0
  },
  "h_scale_co2_address": {
   "_read": 0,
@@ -250,6 +280,12 @@
   "_redraw": false,
   "_write": 0,
   "value": "CO2"
+ },
+ "h_scale_co2_raw_actual": {
+  "_read": 0,
+  "_redraw": false,
+  "_write": 0,
+  "value": "324000"
  },
  "h_scale_co2_tare": {
   "_read": 0,
