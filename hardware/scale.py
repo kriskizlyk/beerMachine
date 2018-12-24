@@ -136,7 +136,7 @@ class Scale():
             y = (m * x) + b
 
             decimal = DataBase.get_value(self.h_scale_decimal)
-            result = '{0:.3f}'.format(y / pow(10, 3))
+            result = str(y / pow(10, int(decimal)))
             truncated_result = result[0:(result.find('.') + 1 + int(decimal))]
             DataBase.set_value(self.h_scale_actual, truncated_result)
 
