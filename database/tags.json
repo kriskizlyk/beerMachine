@@ -3,13 +3,13 @@
   "_read": 0,
   "_redraw": false,
   "_write": 0,
-  "value": "15:32"
+  "value": "17:03"
  },
  "h_door_switch": {
   "_read": 0,
   "_redraw": false,
   "_write": 0,
-  "value": "STOPPED"
+  "value": "RUNNING"
  },
  "h_door_switch_2": {
   "_read": 0,
@@ -21,7 +21,7 @@
   "_read": 0,
   "_redraw": false,
   "_write": 0,
-  "value": 0.0
+  "value": "19.726"
  },
  "h_scale_1_address": {
   "_read": 0,
@@ -51,7 +51,7 @@
   "_read": 0,
   "_redraw": false,
   "_write": 0,
-  "value": "2"
+  "value": "3"
  },
  "h_scale_1_grads": {
   "_read": 0,
@@ -69,25 +69,25 @@
   "_read": 0,
   "_redraw": false,
   "_write": 0,
-  "value": "325000"
+  "value": "317762"
  },
  "h_scale_1_raw_span": {
   "_read": 0,
   "_redraw": false,
   "_write": 0,
-  "value": "331200"
+  "value": "318000"
  },
  "h_scale_1_raw_tare": {
   "_read": 0,
   "_redraw": false,
   "_write": 0,
-  "value": "324000"
+  "value": "300615"
  },
  "h_scale_1_raw_zero": {
   "_read": 0,
   "_redraw": false,
   "_write": 0,
-  "value": "321000"
+  "value": "300615"
  },
  "h_scale_1_span": {
   "_read": 0,
@@ -105,13 +105,13 @@
   "_read": 0,
   "_redraw": false,
   "_write": 0,
-  "value": "0"
+  "value": "1.0"
  },
  "h_scale_1_zero": {
   "_read": 0,
   "_redraw": false,
   "_write": 0,
-  "value": "0"
+  "value": "1.0"
  },
  "h_scale_2_actual": {
   "_read": 0,
@@ -255,7 +255,7 @@
   "_read": 0,
   "_redraw": false,
   "_write": 0,
-  "value": 0.0
+  "value": "0.1"
  },
  "h_scale_co2_address": {
   "_read": 0,
@@ -285,19 +285,37 @@
   "_read": 0,
   "_redraw": false,
   "_write": 0,
-  "value": "324000"
+  "value": "319954"
+ },
+ "h_scale_co2_raw_span": {
+  "_read": 0,
+  "_redraw": false,
+  "_write": 0,
+  "value": "1.0"
+ },
+ "h_scale_co2_raw_zero": {
+  "_read": 0,
+  "_redraw": false,
+  "_write": 0,
+  "value": "1.0"
+ },
+ "h_scale_co2_span": {
+  "_read": 0,
+  "_redraw": false,
+  "_write": 0,
+  "value": "1.0"
  },
  "h_scale_co2_tare": {
   "_read": 0,
   "_redraw": false,
   "_write": 0,
-  "value": "####"
+  "value": "1.0"
  },
  "h_scale_co2_zero": {
   "_read": 0,
   "_redraw": false,
   "_write": 0,
-  "value": "####"
+  "value": "1.0"
  },
  "h_temp_decimal": {
   "_read": 0,
@@ -309,7 +327,7 @@
   "_read": 0,
   "_redraw": false,
   "_write": 0,
-  "value": "7.5"
+  "value": "15.5"
  },
  "h_username": {
   "_read": 0,

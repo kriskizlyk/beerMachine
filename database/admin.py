@@ -94,6 +94,7 @@ class DataBase:
         # old_value = DataBase.get_value(tagname)
         try:
             DataBase.tags[str(tagname)]['value'] = value
+            
         except:
             print("DataBase.set_value(" + tagname + ") does not exist in the database.")
             DataBase.create_tag(tagname, value)
@@ -101,11 +102,19 @@ class DataBase:
 
     def get_value(tagname):
         ''' Returns the value stored in RAM '''
+        ''' For some reason if the tag is not found the next attempt will send back value'''
+        ''' Need to add a type to the tag name so it won't error.'''
+        
+        value = '_get_value_exception'
+
         try:
             value = DataBase.tags.get(tagname).get('value')
+
         except:
             print("DataBase.set_value(" + tagname + ") does not exist in the database.")
-            value = '_invalid_'
+            DataBase.create_tag(tagname, '0.0')            
+
+        # print(tagname + ':' + str(value))
         return value
 
     def refresh_tag_database():

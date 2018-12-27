@@ -127,12 +127,18 @@ class Scale():
 
         else:
             DataBase.set_value(self.h_scale_raw_actual, str(x))
-            y1 = int(DataBase.get_value(self.h_scale_span))
-            y2 = int(DataBase.get_value(self.h_scale_zero))
-            x1 = int(DataBase.get_value(self.h_scale_raw_span))
-            x2 = int(DataBase.get_value(self.h_scale_raw_zero))
-            m = (y1 - y2) / (x1 - x2)
-            b = x1 - (m * y1)
+            ymin = float(DataBase.get_value(self.h_scale_zero))
+            ymax = float(DataBase.get_value(self.h_scale_span))
+            xmin = float(DataBase.get_value(self.h_scale_raw_zero))
+            xmax = float(DataBase.get_value(self.h_scale_raw_span))
+            
+            try:
+                m = (ymax - ymin) / (xmax - xmin)
+            
+            except:
+                m = 0.0
+                
+            b = ymin - (m * xmin)
             y = (m * x) + b
 
             decimal = DataBase.get_value(self.h_scale_decimal)
