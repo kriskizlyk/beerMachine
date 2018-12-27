@@ -32,7 +32,7 @@ class TemperatureSensor():
 
         try:
             sensor = W1ThermSensor()
-            self.new_input = sensor.get_temperature()            
+            self.new_input = sensor.get_temperature()
 
         except Exception as e:
             self.read_sensor_timer.error()

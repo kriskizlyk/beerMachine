@@ -3,13 +3,13 @@
   "_read": 0,
   "_redraw": false,
   "_write": 0,
-  "value": "17:03"
+  "value": "17:28"
  },
  "h_door_switch": {
   "_read": 0,
   "_redraw": false,
   "_write": 0,
-  "value": "RUNNING"
+  "value": "STOPPED"
  },
  "h_door_switch_2": {
   "_read": 0,
@@ -161,6 +161,36 @@
   "_write": 0,
   "value": "Raspberry Cider"
  },
+ "h_scale_2_raw_actual": {
+  "_read": 0,
+  "_redraw": false,
+  "_write": 0,
+  "value": "####"
+ },
+ "h_scale_2_raw_span": {
+  "_read": 0,
+  "_redraw": false,
+  "_write": 0,
+  "value": "1"
+ },
+ "h_scale_2_raw_tare": {
+  "_read": 0,
+  "_redraw": false,
+  "_write": 0,
+  "value": "1"
+ },
+ "h_scale_2_raw_zero": {
+  "_read": 0,
+  "_redraw": false,
+  "_write": 0,
+  "value": "1"
+ },
+ "h_scale_2_span": {
+  "_read": 0,
+  "_redraw": false,
+  "_write": 0,
+  "value": "1"
+ },
  "h_scale_2_style": {
   "_read": 0,
   "_redraw": false,
@@ -171,13 +201,13 @@
   "_read": 0,
   "_redraw": false,
   "_write": 0,
-  "value": "####"
+  "value": "1"
  },
  "h_scale_2_zero": {
   "_read": 0,
   "_redraw": false,
   "_write": 0,
-  "value": "####"
+  "value": "1"
  },
  "h_scale_3_actual": {
   "_read": 0,
@@ -263,6 +293,12 @@
   "_write": 0,
   "value": 8
  },
+ "h_scale_co2_brewdate": {
+  "_read": 0,
+  "_redraw": false,
+  "_write": 0,
+  "value": "20181227"
+ },
  "h_scale_co2_decimal": {
   "_read": 0,
   "_redraw": false,
@@ -291,19 +327,25 @@
   "_read": 0,
   "_redraw": false,
   "_write": 0,
-  "value": "1.0"
+  "value": "320000"
+ },
+ "h_scale_co2_raw_tare": {
+  "_read": 0,
+  "_redraw": false,
+  "_write": 0,
+  "value": "319954"
  },
  "h_scale_co2_raw_zero": {
   "_read": 0,
   "_redraw": false,
   "_write": 0,
-  "value": "1.0"
+  "value": "319954"
  },
  "h_scale_co2_span": {
   "_read": 0,
   "_redraw": false,
   "_write": 0,
-  "value": "1.0"
+  "value": "20000"
  },
  "h_scale_co2_tare": {
   "_read": 0,
@@ -327,7 +369,7 @@
   "_read": 0,
   "_redraw": false,
   "_write": 0,
-  "value": "15.5"
+  "value": "0.0"
  },
  "h_username": {
   "_read": 0,
