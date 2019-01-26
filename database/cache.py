@@ -6,15 +6,31 @@
 
 import os
 import json
+import datetime
 
 class Cache:
     def __init__(self, filename):
         self.file_name = os.path.dirname(os.path.dirname(os.path.abspath(__file__))) + '/database/' + filename + '.json'
+        self.back_directory = os.path.dirname(os.path.dirname(os.path.abspath(__file__))) + '/database/backups/'
         self.data = self.__load_cache()
 
     def get_data(self):
         self.data = self.__load_cache()
         return self.data
+
+    def backup_data(self):
+        ''' Backups the json file to a seperate file.'''
+        data = self.get_data()
+        backup_file = self.back_directory + datetime.datetime.now().strftime("%Y%m%d%H%M%S") + '.json'
+
+        try:
+            with open(backup_file, 'w') as f:
+                json.dump(data, f, indent=1, sort_keys=True)
+                print("Database backed up as:" + backup_file)
+
+        except IOError:
+            print("Backup of data failed.")
+
 
     def refresh(self, ram_data):
         ''' RAM ---> DATA, DATA --> FILE. '''

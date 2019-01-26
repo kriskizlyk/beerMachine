@@ -17,6 +17,7 @@ class Compressor:
         self.door_switch = 'h_compressor_switch'
         self.pin_number = pin_number
         self.pin_state = 0
+        self.error_state = False
 
         try:
             GPIO.setmode(GPIO.BCM)
@@ -24,6 +25,7 @@ class Compressor:
 
         except:
             print("Error settings compressor output.")# Code will only work with a RaspberryPi
+            self.error_state = True
 
         self.update_seconds = 1.0
         self.run_compressor_timer = TimerEvent(self.update_seconds, self.run_compressor)
@@ -39,28 +41,31 @@ class Compressor:
         return self.busy
 
     def run_compressor(self):
-        self.busy = True
-        temp = DataBase.get_value('h_temperature')
+        if self.error_state == False:
+            self.busy = True
+            temp = DataBase.get_value('h_temperature')
 
-        if (temp == 'Error'):
-            DataBase.set_value('h_door_switch', 'STOPPED')
-            GPIO.output(self.pin_number, 0)
-
-        else:
-            temp = float(temp)
-
-            #try:
-            if (temp > 4.0):
-                DataBase.set_value('h_door_switch', 'RUNNING')
-                GPIO.output(self.pin_number, 1)
-
-
-            elif (temp < 2.0):
+            if (temp == 'Error'):
                 DataBase.set_value('h_door_switch', 'STOPPED')
                 GPIO.output(self.pin_number, 0)
 
             else:
-                pass
+                temp = float(temp)
+
+                #try:
+                if (temp > 4.0):
+                    DataBase.set_value('h_door_switch', 'RUNNING')
+                    GPIO.output(self.pin_number, 1)
+
+
+                elif (temp < 2.0):
+                    DataBase.set_value('h_door_switch', 'STOPPED')
+                    GPIO.output(self.pin_number, 0)
+
+                else:
+                    pass
+        else:
+            print("Compressor is in error state.")
 
         self.busy = False
 

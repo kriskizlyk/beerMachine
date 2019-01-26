@@ -11,6 +11,7 @@ class DataBase:
     def __init__(self):
         print("DatabBase locally started.")
         DataBase.tags.update(DataBase.__tag_database_object.get_data())
+        DataBase.backup_flag = True
 
     def create_tag(tagname, value):
         ''' Creates a new tag and adds it to the RAM database. '''
@@ -94,7 +95,7 @@ class DataBase:
         # old_value = DataBase.get_value(tagname)
         try:
             DataBase.tags[str(tagname)]['value'] = value
-            
+
         except:
             print("DataBase.set_value(" + tagname + ") does not exist in the database.")
             DataBase.create_tag(tagname, value)
@@ -104,7 +105,7 @@ class DataBase:
         ''' Returns the value stored in RAM '''
         ''' For some reason if the tag is not found the next attempt will send back value'''
         ''' Need to add a type to the tag name so it won't error.'''
-        
+
         value = '_get_value_exception'
 
         try:
@@ -112,7 +113,7 @@ class DataBase:
 
         except:
             print("DataBase.set_value(" + tagname + ") does not exist in the database.")
-            DataBase.create_tag(tagname, '0.0')            
+            DataBase.create_tag(tagname, '0.0')
 
         # print(tagname + ':' + str(value))
         return value
@@ -121,6 +122,13 @@ class DataBase:
         ''' Refreshes RAM database '''
         # print('DataBase refresh.')
         DataBase.__tag_database_object.refresh(DataBase.tags)
+        DataBase.backup_tag_database()
+
+    def backup_tag_database():
+        ''' Backups the database when the software is run.'''
+        if (DataBase.backup_flag == True):
+            DataBase.__tag_database_object.backup_data()
+            DataBase.backup_flag = False
 
     def __str__(self):
         return tags
