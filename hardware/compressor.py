@@ -41,20 +41,25 @@ class Compressor:
     def run_compressor(self):
         self.busy = True
         temp = DataBase.get_value('h_temperature')
-        temp = float(temp)
-
-        #try:
-        if (temp > 8.0):
-            DataBase.set_value('h_door_switch', 'RUNNING')
-            GPIO.output(self.pin_number, 1)
-
-
-        elif (temp < 6.0):
-            DataBase.set_value('h_door_switch', 'STOPPED')
-            GPIO.output(self.pin_number, 0)
-
-        else:
+        
+        if (temp == 'Error'):
             pass
+            
+        else:
+            temp = float(temp)
+
+            #try:
+            if (temp > 4.0):
+                DataBase.set_value('h_door_switch', 'RUNNING')
+                GPIO.output(self.pin_number, 1)
+
+
+            elif (temp < 2.0):
+                DataBase.set_value('h_door_switch', 'STOPPED')
+                GPIO.output(self.pin_number, 0)
+
+            else:
+                pass
 
         self.busy = False
 

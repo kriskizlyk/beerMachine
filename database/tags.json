@@ -3,13 +3,13 @@
   "_read": 0,
   "_redraw": false,
   "_write": 0,
-  "value": "18:14"
+  "value": "11:53"
  },
  "h_door_switch": {
   "_read": 0,
   "_redraw": false,
   "_write": 0,
-  "value": "RUNNING"
+  "value": "STOPPED"
  },
  "h_door_switch_2": {
   "_read": 0,
@@ -21,7 +21,7 @@
   "_read": 0,
   "_redraw": false,
   "_write": 0,
-  "value": "-19.26"
+  "value": "####"
  },
  "h_scale_1_address": {
   "_read": 0,
@@ -33,69 +33,57 @@
   "_read": 0,
   "_redraw": false,
   "_write": 0,
-  "value": "20181119"
+  "value": "####"
  },
  "h_scale_1_brewer": {
   "_read": 0,
   "_redraw": false,
   "_write": 0,
-  "value": "Kris"
+  "value": "####"
  },
  "h_scale_1_brewstyle": {
   "_read": 0,
   "_redraw": false,
   "_write": 0,
-  "value": "Pilsner"
+  "value": "####"
  },
  "h_scale_1_decimal": {
   "_read": 0,
   "_redraw": false,
   "_write": 0,
-  "value": "2"
- },
- "h_scale_1_grads": {
-  "_read": 0,
-  "_redraw": false,
-  "_write": 0,
-  "value": "5"
+  "value": "####"
  },
  "h_scale_1_name": {
   "_read": 0,
   "_redraw": false,
   "_write": 0,
-  "value": "Urkel"
+  "value": "####"
  },
  "h_scale_1_raw_actual": {
   "_read": 0,
   "_redraw": false,
   "_write": 0,
-  "value": "318382"
+  "value": "####"
  },
  "h_scale_1_raw_span": {
   "_read": 0,
   "_redraw": false,
   "_write": 0,
-  "value": "348890"
+  "value": "####"
  },
  "h_scale_1_raw_tare": {
   "_read": 0,
   "_redraw": false,
   "_write": 0,
-  "value": "333360"
+  "value": "####"
  },
  "h_scale_1_raw_zero": {
   "_read": 0,
   "_redraw": false,
   "_write": 0,
-  "value": "333360"
+  "value": "####"
  },
  "h_scale_1_span": {
-  "_read": 0,
-  "_redraw": false,
-  "_write": 0,
-  "value": "2000"
- },
- "h_scale_1_style": {
   "_read": 0,
   "_redraw": false,
   "_write": 0,
@@ -105,19 +93,19 @@
   "_read": 0,
   "_redraw": false,
   "_write": 0,
-  "value": "1.0"
+  "value": "####"
  },
  "h_scale_1_zero": {
   "_read": 0,
   "_redraw": false,
   "_write": 0,
-  "value": "1.0"
+  "value": "####"
  },
  "h_scale_2_actual": {
   "_read": 0,
   "_redraw": false,
   "_write": 0,
-  "value": "9.991"
+  "value": "####"
  },
  "h_scale_2_address": {
   "_read": 0,
@@ -129,69 +117,57 @@
   "_read": 0,
   "_redraw": false,
   "_write": 0,
-  "value": "20181120"
+  "value": "####"
  },
  "h_scale_2_brewer": {
   "_read": 0,
   "_redraw": false,
   "_write": 0,
-  "value": "Kris"
+  "value": "####"
  },
  "h_scale_2_brewstyle": {
   "_read": 0,
   "_redraw": false,
   "_write": 0,
-  "value": "Cider"
+  "value": "####"
  },
  "h_scale_2_decimal": {
   "_read": 0,
   "_redraw": false,
   "_write": 0,
-  "value": "2"
- },
- "h_scale_2_grads": {
-  "_read": 0,
-  "_redraw": false,
-  "_write": 0,
-  "value": "5"
+  "value": "####"
  },
  "h_scale_2_name": {
   "_read": 0,
   "_redraw": false,
   "_write": 0,
-  "value": "Raspberry Cider"
+  "value": "####"
  },
  "h_scale_2_raw_actual": {
   "_read": 0,
   "_redraw": false,
   "_write": 0,
-  "value": "320071"
+  "value": "####"
  },
  "h_scale_2_raw_span": {
   "_read": 0,
   "_redraw": false,
   "_write": 0,
-  "value": "324000"
+  "value": "####"
  },
  "h_scale_2_raw_tare": {
   "_read": 0,
   "_redraw": false,
   "_write": 0,
-  "value": "320071"
+  "value": "####"
  },
  "h_scale_2_raw_zero": {
   "_read": 0,
   "_redraw": false,
   "_write": 0,
-  "value": "320071"
+  "value": "####"
  },
  "h_scale_2_span": {
-  "_read": 0,
-  "_redraw": false,
-  "_write": 0,
-  "value": "2000"
- },
- "h_scale_2_style": {
   "_read": 0,
   "_redraw": false,
   "_write": 0,
@@ -201,81 +177,9 @@
   "_read": 0,
   "_redraw": false,
   "_write": 0,
-  "value": "1"
+  "value": "####"
  },
  "h_scale_2_zero": {
-  "_read": 0,
-  "_redraw": false,
-  "_write": 0,
-  "value": "1"
- },
- "h_scale_3_actual": {
-  "_read": 0,
-  "_redraw": false,
-  "_write": 0,
-  "value": "####"
- },
- "h_scale_3_brewdate": {
-  "_read": 0,
-  "_redraw": false,
-  "_write": 0,
-  "value": "####"
- },
- "h_scale_3_brewer": {
-  "_read": 0,
-  "_redraw": false,
-  "_write": 0,
-  "value": "####"
- },
- "h_scale_3_brewstyle": {
-  "_read": 0,
-  "_redraw": false,
-  "_write": 0,
-  "value": "####"
- },
- "h_scale_3_name": {
-  "_read": 0,
-  "_redraw": false,
-  "_write": 0,
-  "value": "####"
- },
- "h_scale_3_style": {
-  "_read": 0,
-  "_redraw": false,
-  "_write": 0,
-  "value": "####"
- },
- "h_scale_4_actual": {
-  "_read": 0,
-  "_redraw": false,
-  "_write": 0,
-  "value": "####"
- },
- "h_scale_4_brewdate": {
-  "_read": 0,
-  "_redraw": false,
-  "_write": 0,
-  "value": "####"
- },
- "h_scale_4_brewer": {
-  "_read": 0,
-  "_redraw": false,
-  "_write": 0,
-  "value": "####"
- },
- "h_scale_4_brewstyle": {
-  "_read": 0,
-  "_redraw": false,
-  "_write": 0,
-  "value": "####"
- },
- "h_scale_4_name": {
-  "_read": 0,
-  "_redraw": false,
-  "_write": 0,
-  "value": "####"
- },
- "h_scale_4_style": {
   "_read": 0,
   "_redraw": false,
   "_write": 0,
@@ -285,7 +189,7 @@
   "_read": 0,
   "_redraw": false,
   "_write": 0,
-  "value": "0.1"
+  "value": "####"
  },
  "h_scale_co2_address": {
   "_read": 0,
@@ -297,67 +201,61 @@
   "_read": 0,
   "_redraw": false,
   "_write": 0,
-  "value": "20181227"
+  "value": "####"
  },
  "h_scale_co2_decimal": {
   "_read": 0,
   "_redraw": false,
   "_write": 0,
-  "value": "1"
- },
- "h_scale_co2_grads": {
-  "_read": 0,
-  "_redraw": false,
-  "_write": 0,
-  "value": "5"
+  "value": "####"
  },
  "h_scale_co2_name": {
   "_read": 0,
   "_redraw": false,
   "_write": 0,
-  "value": "CO2"
+  "value": "####"
  },
  "h_scale_co2_raw_actual": {
   "_read": 0,
   "_redraw": false,
   "_write": 0,
-  "value": "320085"
+  "value": "####"
  },
  "h_scale_co2_raw_span": {
   "_read": 0,
   "_redraw": false,
   "_write": 0,
-  "value": "1.0"
+  "value": "####"
  },
  "h_scale_co2_raw_tare": {
   "_read": 0,
   "_redraw": false,
   "_write": 0,
-  "value": "320082"
+  "value": "####"
  },
  "h_scale_co2_raw_zero": {
   "_read": 0,
   "_redraw": false,
   "_write": 0,
-  "value": "1.0"
+  "value": "####"
  },
  "h_scale_co2_span": {
   "_read": 0,
   "_redraw": false,
   "_write": 0,
-  "value": "200"
+  "value": "####"
  },
  "h_scale_co2_tare": {
   "_read": 0,
   "_redraw": false,
   "_write": 0,
-  "value": "1.0"
+  "value": "####"
  },
  "h_scale_co2_zero": {
   "_read": 0,
   "_redraw": false,
   "_write": 0,
-  "value": "1.0"
+  "value": "####"
  },
  "h_temp_decimal": {
   "_read": 0,
@@ -369,7 +267,7 @@
   "_read": 0,
   "_redraw": false,
   "_write": 0,
-  "value": "14.1"
+  "value": "-9.1"
  },
  "h_username": {
   "_read": 0,

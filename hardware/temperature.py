@@ -10,13 +10,13 @@ except:
 class TemperatureSensor():
 
     def __init__(self):
-        self.update_seconds = 0.25
+        self.update_seconds = 1
         self.h_temperature = 'h_temperature'
         self.h_temp_decimal = 'h_temp_decimal'
         self.filtered = 0.0
         self.filtered_previous = 0.0
         self.new_output = 0.0
-        self.filter_k = 0.05
+        self.filter_k = 0.25
 
         self.read_sensor_timer = TimerEvent(self.update_seconds, self.read_sensor)
         self.read_sensor_timer.start()
@@ -33,18 +33,16 @@ class TemperatureSensor():
         try:
             sensor = W1ThermSensor()
             self.new_input = sensor.get_temperature()
-
+            #print(self.new_input)
+            self.filtered = ((1.0 - self.filter_k) * self.filtered_previous) + (self.filter_k * self.new_input)
+            self.filtered_previous = self.filtered
+            temp = '{0:.1f}'.format(self.filtered)
+            DataBase.set_value(self.h_temperature, temp)
+    
         except Exception as e:
             self.read_sensor_timer.error()
             print("Temperature Sensor reading failed. " + str(e) + '.')
-            self.new_input = 0.0
-
-        self.filtered = ((1.0 - self.filter_k) * self.filtered_previous) + (self.filter_k * self.new_input)
-        self.filtered_previous = self.filtered
-
-        #temp = '{0:.' + str(self.h_temp_decimal) +'f}'.format(temp)
-        temp = '{0:.1f}'.format(self.filtered)
-        DataBase.set_value(self.h_temperature, temp)
+            DataBase.set_value(self.h_temperature, 'Error')            
 
         self.busy = False
 
